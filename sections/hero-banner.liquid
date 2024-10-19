@@ -1,0 +1,281 @@
+{% liquid 
+  assign imgage_overlay = 'rgba(0 0 0 , 0.5)'
+  assign text_font_family = ''
+  assign subtitle_color = ''
+  assign focused_title_color = ''
+  assign title_color = ''
+  assign description_color = ''
+  assign title_font = ''
+
+  if section.settings.image_overlay != blank
+    assign imgage_overlay = section.settings.image_overlay
+  endif
+
+  if section.settings.subtitle_color != blank
+    assign subtitle_color = "color: " | append: section.settings.subtitle_color
+  endif
+
+  if section.settings.focused_title_color != blank
+    assign focused_title_color = "color: " | append: section.settings.focused_title_color
+  endif
+
+  if section.settings.title_color != blank
+    assign title_color = "color: " | append: section.settings.title_color
+  endif
+
+  if section.settings.description_color != blank
+    assign description_color = "color: " | append: section.settings.description_color
+  endif
+
+  if section.settings.text_font.family != blank
+    assign text_font_family = section.settings.text_font.family | append: ',' | append: section.settings.text_font.fallback_families
+  endif
+
+  if section.settings.title_font.family != blank
+    assign title_font = section.settings.title_font.family | append: ',' | append: section.settings.title_font.fallback_families
+  endif
+%}
+
+<div class="hero-banner">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 1920, height: 550, crop: 'center' | image_tag: width: 1920, height: 550 }}
+    {% else %}
+      <img src="{{ 'password-page-background.jpg' | asset_url }}" width="1920" height="550" />
+    {% endif %}
+    <div class="hero-banner-content">
+      <div class="hero-banner-description">
+        <h1>
+          <span class="hero-banner-focused-title" style="{{ focused_title_color }}" >{{ section.settings.focused_title }}</span>
+          <span class="hero-banner-normal-title" style="{{ title_color }}">{{ section.settings.title }}</span>
+        </h1>
+        <h2 style="{{ subtitle_color }}" >{{ section.settings.subtitle }}</h2>
+        <p style="{{ description_color }}" >{{ section.settings.description }}</p>
+        <a 
+          href="{{ section.settings.button_url | escape }}" 
+          class="hero-banner-button action_button"
+        >
+          {{ section.settings.button_text | escape }}
+        </a>
+      </div>
+    </div>
+</div>
+
+{% style %}
+  .hero-banner img{
+    width: 100%;
+  }
+  .hero-banner{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .hero-banner p,
+  .hero-banner a {
+    font-family: {{ text_font_family }}
+  }
+  .hero-banner:after {
+      content: '';
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background: {{ imgage_overlay }};
+  }
+  .hero-banner-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1170px;
+    width: 95%;
+    z-index: 9;
+  }
+  .hero-banner-description {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 550px;
+  }
+  .hero-banner-content h1,
+  .hero-banner-content h2{
+    text-align: left;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+    text-transform: inherit;
+    line-height: 30px;
+    max-width: 350px;
+    font-family: {{ title_font }}
+  }
+  .hero-banner-content h1,
+  .hero-banner-content h2,
+  .hero-banner-content p{
+    width: 100%;
+  }
+  .hero-banner-content h1 {
+    order: 2;
+    font-size: 40px;
+    line-height: 50px;
+    margin: 15px 0 30px 0;
+  }
+  .hero-banner-content h2 {
+    order: 1;
+    font-size: 16px;
+  }
+  .hero-banner-content p {
+    order: 3;
+    margin-bottom: 35px;
+  }
+  a.hero-banner-button {
+    order: 4;
+    background: {{ section.settings.button_background_color }};
+    border: 1px solid {{ section.settings.button_border_color }};
+    color: {{ section.settings.button_color }};
+    border-radius: 30px;
+    max-width: 200px;
+  }
+  a.hero-banner-button:hover {
+    background: {{ section.settings.button_hover_bg_color }};
+    border: 1px solid {{ section.settings.button_border_hover_color }};
+    color: {{ section.settings.button_hover_color}}
+  }
+{% endstyle %}
+  
+{% schema %}
+{
+  "name": "Hero Banner",
+  "tag": "section",
+  "class": "hero-banner-container section-container",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "prefered dimension is 1920x550px"
+    },
+    {
+      "type": "color_background",
+      "id": "image_overlay",
+      "label": "Image Overlay Color",
+      "default": "rgba(0,0,0,0.5)"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Title"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#b20505"
+    },
+    {
+      "type": "text",
+      "id": "focused_title",
+      "label": "Focused Title"
+    },
+    {
+      "type": "color",
+      "id": "focused_title_color",
+      "label": "Focused Title Color",
+      "default": "#0effdf"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Short Description",
+      "default": "Sale upto 70% on selected items. "
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Color",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#3a38c0"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg_color",
+      "label": "Button Hover Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_hover_color",
+      "label": "Button Hover Border Color",
+      "default": "#000"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title Font",
+      "default": "rubik_n7"
+    },
+    {
+      "type": "font_picker",
+      "id": "text_font",
+      "label": "Text Font",
+      "default": "rubik_n4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner",
+      "settings": {
+        "subtitle": "Special Offer",
+        "focused_title": "Huge Saving",
+        "title": "on UHD Television",
+        "description": "Sale upto 70% on selected items. ",
+        "button_text": "Shop Now",
+        "button_url": ""
+      },
+    }
+  ],
+}
+{% endschema %}
