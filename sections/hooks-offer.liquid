@@ -1,0 +1,288 @@
+
+  
+<div class="hooks-offer">
+    {% for block in section.blocks %}
+        {%- case block.type -%}
+            {%- when "offers" -%}
+                <div class="hooks-offer-box">
+                    <div class="hooks-offer-box-content" style="background-color: {{ block.settings.background }}">
+                        {% if block.settings.image != blank %}
+                            {{ block.settings.image | image_url: width: 700, height: 700, crop: "center" | image_tag: width: 700, height: 700 }}
+                        {% endif %}
+                        <div class="hook-offer-description">
+                            <div class="hook-offer-content {% if block.settings.offer_type == 'without_button' %}without-button {% else %} with-button {% endif %} ">
+                                <h3 
+                                    style="font-family: {{ block.settings.font.family | append: ',' | append: block.settings.font.fallback_families }}; color: {{ block.settings.subtitle_color }}"
+                                >{{ block.settings.subtitle }}</h3>
+                                <h2 
+                                    style="font-family: {{ block.settings.font.family | append: ',' | append: block.settings.font.fallback_families }}; color: {{ block.settings.title_color }}"
+                                >{{ block.settings.title }}</h2>
+                                {% if block.settings.offer_type == 'with_button' %}
+                                    <a 
+                                        href="{{ block.settings.button_url }}" 
+                                        class="action_button letter-spacing-2"
+                                        id="action_button_{{ block.id }}" 
+                                    >{{ block.settings.button_text }}</a>
+                                    {% style %}
+                                      #action_button_{{ block.id }}{
+                                        font-family: {{ block.settings.font.family | append: ',' | append: block.settings.font.fallback_families }};
+                                        color: {{ block.settings.button_color }};
+                                        background-color: {{ block.settings.button_background_color }};
+                                        border-color: {{ block.settings.button_border_color }};
+                                      }
+                                      #action_button_{{ block.id }}:hover{
+                                        background-color: {{ block.settings.button_hover_bg_color }};
+                                        border-color: {{ block.settings.button_border_hover_color }};
+                                        color: {{ block.settings.button_hover_color }}
+                                      }
+                                    {% endstyle %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        {%- endcase -%}
+    {%- endfor -%}
+</div>
+
+{% style %}
+  .hooks-offer {
+    margin: 0 auto;
+    padding: 50px 0;
+    max-width: 1170px;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hooks-offer-box {
+    width: 33.33%;
+  }
+  .hooks-offer-box-content {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 10px;
+  }
+  .hook-offer-description h2,
+  .hook-offer-description h3{
+    text-align: left;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+  }
+  .hook-offer-description {
+    position: absolute;
+    left: 0;
+    padding: 10px 20px;
+  }
+  .hook-offer-content{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hook-offer-content h2,
+  .hook-offer-content h3 {
+    width: 100%;
+  }
+
+  .hook-offer-content h3{
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .hook-offer-content h2{
+    font-size: 32px;
+  }
+  .hook-offer-content.with-button .action_button {
+    max-width: 150px;
+    margin-top: 10px;
+  }
+  .hook-offer-content.without-button h2,
+  .hook-offer-content.without-button h3{
+    font-weight: 700;
+    text-align: center;
+  }
+{% endstyle %}
+    
+{% schema %}
+  {
+    "name": "Hooks & Offer",
+    "tag": "section",
+    "class": "hooks-offer-container section-container margin-bottom-0 background-gray",
+    "blocks": [
+        {
+            "type": "offers",
+            "name": "Offers",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image",
+                    "info": "Preferred Size is 700 x 700"
+                },
+                {
+                    "type": "color",
+                    "id": "background",
+                    "label": "Background Color",
+                    "default": "#e2ebd8"
+                },
+                {
+                    "type": "select",
+                    "id": "offer_type",
+                    "label": "Offer Type",
+                    "options": [
+                        {
+                            "label": "With Button",
+                            "value": "with_button"
+                        },
+                        {
+                            "label": "Without Button",
+                            "value": "without_button"
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "label": "Sub Title",
+                    "default": "Nutrition"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "For Life"
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Shop Now",
+                    "info" : "This will display if Offer Type is 'With Button' "
+                },
+                {
+                    "type": "url",
+                    "id": "button_url",
+                    "label": "Button URL",
+                    "info" : "This will display if Offer Type is 'With Button' "
+                },
+                {
+                    "type": "font_picker",
+                    "id": "font",
+                    "label": "Font",
+                    "default": "rubik_n7"
+                  },
+                {
+                    "type": "color",
+                    "id": "subtitle_color",
+                    "label": "Subtitle Color",
+                    "default": "#27496e"
+                },
+                {
+                    "type": "color",
+                    "id": "title_color",
+                    "label": "title Color",
+                    "default": "#27496e"
+                },
+                {
+                    "type": "color",
+                    "id": "button_color",
+                    "label": "Button Color",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "button_hover_color",
+                    "label": "Button Hover Color",
+                    "default": "#27496e"
+                },
+                {
+                    "type": "color",
+                    "id": "button_background_color",
+                    "label": "Button Background Color",
+                    "default": "#27496e"
+                },
+                {
+                    "type": "color",
+                    "id": "button_hover_bg_color",
+                    "label": "Button Hover Background Color",
+                    "default": "#fff"
+                },
+                {
+                    "type": "color",
+                    "id": "button_border_color",
+                    "label": "Button Border Color",
+                    "default": "#27496e"
+                },
+                {
+                    "type": "color",
+                    "id": "button_border_hover_color",
+                    "label": "Button Hover Border Color",
+                    "default": "#fff"
+                },
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hooks & Offers",
+            "blocks": [
+                {
+                    "type": "offers",
+                    "settings": {
+                        "background": "#E2EBD8",
+                        "offer_type": "with_button",
+                        "subtitle": "Nutrition",
+                        "title": "For Life",
+                        "button_text": "Shop Now",
+                        "subtitle_color": "#27496e",
+                        "title_color": "#27496e",
+                        "button_color": "#FFF",
+                        "button_border_color": "#27496e",
+                        "button_background_color": "#27496e",
+                        "button_hover_color": "#27496e",
+                        "button_border_hover_color": "#27496e",
+                        "button_hover_bg_color": "#FFF",
+                    },
+                },
+                {
+                    "type": "offers",
+                    "settings": {
+                        "background": "#2F3A5A",
+                        "offer_type": "without_button",
+                        "subtitle": "Nutrition for Sport",
+                        "title": "Up To 50% Off",
+                        "subtitle_color": "#F86D06",
+                        "title_color": "#FFF"
+                    },
+                },
+                {
+                    "type": "offers",
+                    "settings": {
+                        "background": "#ebdaa2",
+                        "offer_type": "with_button",
+                        "subtitle": "Vitamin",
+                        "title": "For Kid",
+                        "button_text": "Shop Now",
+
+                        "subtitle_color": "#FFF",
+                        "title_color": "#FFF",
+                        "button_color": "#FFF",
+                        "button_hover_color": "#db5110",
+
+                        "button_border_color": "#db5110",
+                        "button_background_color": "#db5110",
+                        
+                        "button_border_hover_color": "#db5110",
+                        "button_hover_bg_color": "#FFF",
+                    },
+                },
+            ]
+        }
+    ],
+  }
+{% endschema %}
