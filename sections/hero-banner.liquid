@@ -36,20 +36,20 @@
   endif
 %}
 
-<div class="hero-banner is-flex is-align-center">
+<div class="hero-banner relative is-flex is-align-center">
     {% if section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1920, height: 550, crop: 'center' | image_tag: width: 1920, height: 550 }}
+      {{ section.settings.image | image_url: width: 1920, height: 550, crop: 'center' | image_tag: width: 1920, height: 550, class: "width-100" }}
     {% else %}
-      <img src="{{ 'password-page-background.jpg' | asset_url }}" width="1920" height="550" />
+      <img src="{{ 'password-page-background.jpg' | asset_url }}" class="width-100" width="1920" height="550" />
     {% endif %}
     <div class="hero-banner-content">
       <div class="hero-banner-description is-flex is-flex-wrap">
-        <h1>
+        <h1 class="width-100">
           <span class="hero-banner-focused-title" style="{{ focused_title_color }}" >{{ section.settings.focused_title }}</span>
           <span class="hero-banner-normal-title" style="{{ title_color }}">{{ section.settings.title }}</span>
         </h1>
-        <h2 style="{{ subtitle_color }}" >{{ section.settings.subtitle }}</h2>
-        <p style="{{ description_color }}" >{{ section.settings.description }}</p>
+        <h2 class="width-100" style="{{ subtitle_color }}" >{{ section.settings.subtitle }}</h2>
+        <p class="width-100" style="{{ description_color }}" >{{ section.settings.description }}</p>
         <a 
           href="{{ section.settings.button_url | escape }}" 
           class="hero-banner-button action_button"
@@ -61,12 +61,6 @@
 </div>
 
 {% style %}
-  .hero-banner img{
-    width: 100%;
-  }
-  .hero-banner{
-    position: relative;
-  }
   .hero-banner p,
   .hero-banner a {
     font-family: {{ text_font_family }}
@@ -98,11 +92,6 @@
     line-height: 30px;
     max-width: 350px;
     font-family: {{ title_font }}
-  }
-  .hero-banner-content h1,
-  .hero-banner-content h2,
-  .hero-banner-content p{
-    width: 100%;
   }
   .hero-banner-content h1 {
     order: 2;
