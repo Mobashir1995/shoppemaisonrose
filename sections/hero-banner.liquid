@@ -36,14 +36,14 @@
   endif
 %}
 
-<div class="hero-banner">
+<div class="hero-banner is-flex is-align-center">
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 1920, height: 550, crop: 'center' | image_tag: width: 1920, height: 550 }}
     {% else %}
       <img src="{{ 'password-page-background.jpg' | asset_url }}" width="1920" height="550" />
     {% endif %}
     <div class="hero-banner-content">
-      <div class="hero-banner-description">
+      <div class="hero-banner-description is-flex is-flex-wrap">
         <h1>
           <span class="hero-banner-focused-title" style="{{ focused_title_color }}" >{{ section.settings.focused_title }}</span>
           <span class="hero-banner-normal-title" style="{{ title_color }}">{{ section.settings.title }}</span>
@@ -66,8 +66,6 @@
   }
   .hero-banner{
     position: relative;
-    display: flex;
-    align-items: center;
   }
   .hero-banner p,
   .hero-banner a {
@@ -92,17 +90,10 @@
     z-index: 9;
   }
   .hero-banner-description {
-    display: flex;
-    flex-wrap: wrap;
     max-width: 550px;
   }
   .hero-banner-content h1,
   .hero-banner-content h2{
-    text-align: left;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
     text-transform: inherit;
     line-height: 30px;
     max-width: 350px;
