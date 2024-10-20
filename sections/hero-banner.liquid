@@ -36,7 +36,7 @@
   endif
 %}
 
-<div class="hero-banner relative is-flex is-align-center">
+<div class="hero-banner relative is-flex is-align-center text-align-left">
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 1920, height: 550, crop: 'center' | image_tag: width: 1920, height: 550, class: "width-100" }}
     {% else %}

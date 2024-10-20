@@ -211,12 +211,12 @@ Description: Shopify Theme (https://www.shopify.com/?ref=out-of-the-sandbox)
 
 /* Text alignment */
 .text-align-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-align-left,
 .text-align-start {
-  text-align: left;
+  text-align: left !important;
 }
 .text-align-left h1, .text-align-left h2, .text-align-left h3,
 .text-align-left h1.title,
@@ -228,12 +228,19 @@ Description: Shopify Theme (https://www.shopify.com/?ref=out-of-the-sandbox)
 .text-align-start h1.title,
 .text-align-start h2.title,
 .text-align-start h3.title {
-  text-align: left;
+  text-align: left !important;
+}
+
+.text-align-center h1, .text-align-center h2, .text-align-center h3,
+.text-align-center h1.title,
+.text-align-center h2.title,
+.text-align-center h3.title {
+  text-align: center !important;
 }
 
 .text-align-right,
 .text-align-end {
-  text-align: right;
+  text-align: right !important;
 }
 .text-align-right h1, .text-align-right h2, .text-align-right h3,
 .text-align-right h1.title,
@@ -245,7 +252,7 @@ Description: Shopify Theme (https://www.shopify.com/?ref=out-of-the-sandbox)
 .text-align-end h1.title,
 .text-align-end h2.title,
 .text-align-end h3.title {
-  text-align: right;
+  text-align: right !important;
 }
 
 /* Visibility */
@@ -12101,9 +12108,6 @@ div.announcementBar__message a, div.announcementBar__message p {
 .letter-spacing-2 {
   letter-spacing: 2px !important;
 }
-.text-align-left{
-  text-align: left !important;
-}
 .background-gray {
   background-color: #f8f8f8;
 }
@@ -12117,7 +12121,6 @@ div.announcementBar__message a, div.announcementBar__message p {
 .section-container h4,
 .section-container h5,
 .section-container h6{
-  text-align: left;
   border: 0;
   margin: 0;
   padding: 0;
