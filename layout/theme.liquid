@@ -59,9 +59,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
 
     <!-- Preload Assets -->
+    <link rel="preload" href="{{ 'fontawesome.min.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'fancybox.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'styles.css' | asset_url }}" as="style">
     <link rel="preload" href="{{ 'app.js' | asset_url }}" as="script">
+
+    <!-- Stylesheet for Fontawesome library -->
+    {{ 'fontawesome.min.css' | asset_url | stylesheet_tag }}
 
     <!-- Stylesheet for Fancybox library -->
     {{ 'fancybox.css' | asset_url | stylesheet_tag }}
