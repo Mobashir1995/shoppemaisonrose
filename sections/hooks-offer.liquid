@@ -1,20 +1,22 @@
 
   
-<div class="hooks-offer">
+<div class="hooks-offer is-flex is-align-center is-justify-center is-flex-wrap">
     {% for block in section.blocks %}
         {%- case block.type -%}
             {%- when "offers" -%}
-                <div class="hooks-offer-box">
-                    <div class="hooks-offer-box-content" style="background-color: {{ block.settings.background }}">
+                <div class="hooks-offer-box width-33">
+                    <div class="hooks-offer-box-content relative is-flex is-align-center is-justify-center is-flex-wrap" style="background-color: {{ block.settings.background }}">
                         {% if block.settings.image != blank %}
                             {{ block.settings.image | image_url: width: 700, height: 700, crop: "center" | image_tag: width: 700, height: 700 }}
                         {% endif %}
                         <div class="hook-offer-description">
-                            <div class="hook-offer-content {% if block.settings.offer_type == 'without_button' %}without-button {% else %} with-button {% endif %} ">
+                            <div class="hook-offer-content is-flex is-flex-wrap {% if block.settings.offer_type == 'without_button' %}without-button {% else %} with-button {% endif %} ">
                                 <h3 
+                                    class="width-100"
                                     style="font-family: {{ block.settings.font.family | append: ',' | append: block.settings.font.fallback_families }}; color: {{ block.settings.subtitle_color }}"
                                 >{{ block.settings.subtitle }}</h3>
                                 <h2 
+                                    class="width-100"
                                     style="font-family: {{ block.settings.font.family | append: ',' | append: block.settings.font.fallback_families }}; color: {{ block.settings.title_color }}"
                                 >{{ block.settings.title }}</h2>
                                 {% if block.settings.offer_type == 'with_button' %}
@@ -51,45 +53,16 @@
     padding: 50px 0;
     max-width: 1170px;
     width: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .hooks-offer-box {
-    width: 33.33%;
   }
   .hooks-offer-box-content {
     min-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: relative;
     margin: 0 10px;
-  }
-  .hook-offer-description h2,
-  .hook-offer-description h3{
-    text-align: left;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    font-weight: 700;
   }
   .hook-offer-description {
     position: absolute;
     left: 0;
     padding: 10px 20px;
   }
-  .hook-offer-content{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .hook-offer-content h2,
-  .hook-offer-content h3 {
-    width: 100%;
-  }
-
   .hook-offer-content h3{
     font-size: 16px;
     font-weight: 400;
