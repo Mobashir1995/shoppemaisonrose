@@ -1,0 +1,293 @@
+<div class="section">
+    <div class="container">
+        <div class="one-whole column">
+            <div class="headding-box text-align-center">
+                <h3>{{  section.settings.title | escape }}</h3>
+                <div class="headding-icons">
+                    <ul class="none relative display-inline-block margin-top-5 margin-bottom-0">
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                    </ul>
+                </div>
+                <p class="padding-y-10 margin-bottom-0">{{ section.settings.subtitle }}</p>
+            </div>
+            
+            <div class="customer-reviews-container is-flex is-flex-wrap is-justify-center">
+                {% for block in section.blocks %}
+                    {%- case block.type -%}
+                        {%- when "review" -%}
+                            {% liquid
+                                assign review = block.settings
+                                assign rating = block.settings.rating
+                                assign positive_rating_ceil = rating | append: "" | ceil
+                                assign positive_rating = rating | append: "" | floor
+                                assign negative_rating = 5 | minus: positive_rating_ceil | floor
+                                assign total_user_rating = positive_rating | plus: negative_rating
+                             %}
+                                <div class="margin-top-40 customer-single-review width-25 width-md-33 width-sm-50 width-xs-100">
+                                    <div class="customer-single-review-box padding-x-10">
+                                        <div class="customer-review-card background-gray">
+                                            <div class="customer-rating">
+                                                <span class="total-star-rating">
+                                                    {% for i in (1..positive_rating) %}
+                                                        <i class="fa-solid fa-star"></i>
+                                                    {% endfor %}
+                                                    {% if total_user_rating < 5 %}
+                                                        <i class="fa-solid fa-star-half-stroke"></i>
+                                                    {% endif %}
+                                                    {% for i in (1..negative_rating) %}
+                                                        <i class="fa-regular fa-star"></i>
+                                                    {% endfor %}
+                                                </span>
+                                            </div>
+                                            <div class="customer-rating-content margin-top-15">{{ review.review_content }}</div>
+                                            <div class="reviewer-indicator">
+                                                <svg viewBox="0 0 19 13" xmlns="http://www.w3.org/2000/svg" _fill="rgba(158, 230, 171, 0.1)"><path d="M0.965704 0.000125914H10.3736L19 5.15272e-05C19 5.15272e-05 16.2331 5.15665 10.3736 8.99489C6.68171 11.4132 3.12703 12.3741 1.00222 12.7541C0.488597 12.8459 0.227225 12.1436 0.617463 11.7973C2.03909 10.5355 3.88298 8.3072 3.88294 5.23718C3.88287 9.44134e-05 0.965704 0.000125914 0.965704 0.000125914Z"></path></svg>
+                                            </div>
+                                        </div>
+
+                                        <div class="customer-reviewer-info is-flex">
+                                            {% if review.image != blank %}
+                                                <div class="customer-reviewer-avatar">
+                                                    {{ review.image | image_url: width: 150, height: 150, crop: "center" | image_tag: width: 150, height: 150, class: "width-100" }}
+                                                </div>
+                                            {% endif %}
+                                            <div class="customer-reviewer-bio">
+                                                <h5 class="customer-reviewer-name">{{ review.name }} <span class="verify-badge"><i class="fa-solid fa-circle-check"></i></span></h5>
+                                                <div class="customer-reviewer-designation">{{ review.designation }}</div>
+                                                <div class="customer-reviewer-organization">{{ review.organization }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                    {%- endcase -%}
+                {%- endfor -%}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+        background: {{ section.settings.section_bg_color }}
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:before {
+        background: linear-gradient(to right, #fff, {{section.settings.icon_color }});
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:after {
+        background: linear-gradient(to right, {{section.settings.icon_color }}, #fff);
+    }
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4 {
+        color: {{ section.settings.title_color }};
+        font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }}
+    }
+
+    #shopify-section-{{ section.id }} p {
+        color: {{ section.settings.text_color }};
+        font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }}
+    }
+
+    #shopify-section-{{ section.id }} .customer-review-card{
+        background: {{ section.settings.card_bg_color }}
+    }
+    #shopify-section-{{ section.id }} .reviewer-indicator path {
+        fill: {{ section.settings.card_bg_color }}
+    }
+
+    #shopify-section-{{ section.id }} .customer-reviewer-name,
+    #shopify-section-{{ section.id }} .customer-reviewer-designation,
+    #shopify-section-{{ section.id }} .customer-reviewer-organization{
+        color: {{ section.settings.text_color }};
+    }
+    #shopify-section-{{ section.id }} .total-star-rating {
+        color: {{ section.settings.rating_icon_color }}
+    }
+    #shopify-section-{{ section.id }} .verify-badge {
+        color: {{ section.settings.verify_badge_color }}
+    }
+
+
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Customer Reviews",
+    "tag": "section",
+    "class": "customer-review-container section-container margin-bottom-0 padding-y-50",
+    "blocks": [
+        {
+            "type": "review",
+            "name": "Review",
+            "settings": [
+                {
+                    "type": "range",
+                    "id": "rating",
+                    "label": "Rating",
+                    "min": 0,
+                    "max": 5,
+                    "step": 0.5,
+                    "default": 0
+                },
+                {
+                    "type": "richtext",
+                    "id": "review_content",
+                    "label": "Review",
+                    "default": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Avatar",
+                    "info": "prefered dimension is 150x150"
+                },
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Customer Name",
+                    "default": "Cheryl Smith"
+                },
+                {
+                    "type": "text",
+                    "id": "designation",
+                    "label": "Designation",
+                    "default": "System Analyst"
+                },
+                {
+                    "type": "text",
+                    "id": "organization",
+                    "label": "Organization",
+                    "default": "Netteler"
+                },
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "section_bg_color",
+            "label": "Main Section Background Color",
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Customer Reviews"
+        },
+        {
+            "type": "text",
+            "id": "icon",
+            "label": "Icon Name",
+            "default": "fa-regular fa-gem"
+        },
+        {
+            "type": "textarea",
+            "id": "subtitle",
+            "label": "Sub Title",
+            "default": "Lorem ipsum dolor sit amet<br>consectetueradipiscing elit, sed diam nonummy nibh"
+        },
+        {
+            "type": "color",
+            "id": "icon_color",
+            "label": "Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#444"
+        },
+        {
+            "type": "font_picker",
+            "id": "title_font",
+            "label": "Title Font",
+            "default": "rubik_n7"
+        },
+        {
+            "type": "font_picker",
+            "id": "text_font",
+            "label": "Text Font",
+            "default": "rubik_n4"
+        },
+        {
+            "type": "color",
+            "id": "card_bg_color",
+            "label": "Card Background Color",
+            "default": "#f2eeeb"
+        },
+        {
+            "type": "color",
+            "id": "rating_icon_color",
+            "label": "Rating Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "verify_badge_color",
+            "label": "Verify Badge Color",
+            "default": "#1a7dff"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Customer Reviews",
+            "blocks": [
+                {
+                    "type": "review",
+                    "settings": {
+                        "rating": 4.5,
+                        "review_content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>",
+                        "name": "Cheryl Smith",
+                        "designation": "System Analyst",
+                        "organization": "Netteler"
+                    },
+                },
+                {
+                    "type": "review",
+                    "settings": {
+                        "rating": 4,
+                        "review_content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>",
+                        "name": "Cheryl Smith",
+                        "designation": "System Analyst",
+                        "organization": "Netteler"
+                    },
+                },
+                {
+                    "type": "review",
+                    "settings": {
+                        "rating": 5,
+                        "review_content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>",
+                        "name": "Cheryl Smith",
+                        "designation": "System Analyst",
+                        "organization": "Netteler"
+                    },
+                },
+                {
+                    "type": "review",
+                    "settings": {
+                        "rating": 0,
+                        "review_content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>",
+                        "name": "Cheryl Smith",
+                        "designation": "System Analyst",
+                        "organization": "Netteler"
+                    },
+                }
+            ],
+            "settings": {
+                
+            }
+        }
+    ]
+}
+{% endschema %}

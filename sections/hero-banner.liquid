@@ -61,61 +61,23 @@
 </div>
 
 {% style %}
-  .hero-banner p,
-  .hero-banner a {
+  #shopify-section-{{ section.id }} .hero-banner p,
+  #shopify-section-{{ section.id }} .hero-banner a {
     font-family: {{ text_font_family }}
   }
-  .hero-banner:after {
-      content: '';
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      position: absolute;
+  #shopify-section-{{ section.id }} .hero-banner:after {
       background: {{ imgage_overlay }};
   }
-  .hero-banner-content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    max-width: 1170px;
-    width: 95%;
-    z-index: 9;
-  }
-  .hero-banner-description {
-    max-width: 550px;
-  }
-  .hero-banner-content h1,
-  .hero-banner-content h2{
-    text-transform: inherit;
-    line-height: 30px;
-    max-width: 350px;
+  #shopify-section-{{ section.id }} .hero-banner-content h1,
+  #shopify-section-{{ section.id }} .hero-banner-content h2{
     font-family: {{ title_font }}
   }
-  .hero-banner-content h1 {
-    order: 2;
-    font-size: 40px;
-    line-height: 50px;
-    margin: 15px 0 30px 0;
-  }
-  .hero-banner-content h2 {
-    order: 1;
-    font-size: 16px;
-  }
-  .hero-banner-content p {
-    order: 3;
-    margin-bottom: 35px;
-  }
-  a.hero-banner-button {
-    order: 4;
+  #shopify-section-{{ section.id }} a.hero-banner-button {
     background: {{ section.settings.button_background_color }};
     border: 1px solid {{ section.settings.button_border_color }};
     color: {{ section.settings.button_color }};
-    border-radius: 30px;
-    max-width: 200px;
   }
-  a.hero-banner-button:hover {
+  #shopify-section-{{ section.id }} a.hero-banner-button:hover {
     background: {{ section.settings.button_hover_bg_color }};
     border: 1px solid {{ section.settings.button_border_hover_color }};
     color: {{ section.settings.button_hover_color}}
@@ -138,7 +100,8 @@
       "type": "color_background",
       "id": "image_overlay",
       "label": "Image Overlay Color",
-      "default": "rgba(0,0,0,0.5)"
+      "default": "rgba(242,238,235,0.3)",
+      "info": "use rgba() color code. Otherwise this will override the banner"
     },
     {
       "type": "text",
@@ -149,7 +112,7 @@
       "type": "color",
       "id": "subtitle_color",
       "label": "Subtitle Color",
-      "default": "#b20505"
+      "default": "#fff"
     },
     {
       "type": "text",
@@ -160,7 +123,7 @@
       "type": "color",
       "id": "focused_title_color",
       "label": "Focused Title Color",
-      "default": "#0effdf"
+      "default": "#E0D9D0"
     },
     {
       "type": "text",
@@ -199,37 +162,37 @@
       "type": "color",
       "id": "button_color",
       "label": "Button Color",
-      "default": "#fff"
+      "default": "#444"
     },
     {
       "type": "color",
       "id": "button_hover_color",
       "label": "Button Hover Color",
-      "default": "#000"
+      "default": "#fff"
     },
     {
       "type": "color",
       "id": "button_background_color",
       "label": "Button Background Color",
-      "default": "#3a38c0"
+      "default": "#E0D9D0"
     },
     {
       "type": "color",
       "id": "button_hover_bg_color",
       "label": "Button Hover Background Color",
-      "default": "#fff"
+      "default": "#444"
     },
     {
       "type": "color",
       "id": "button_border_color",
       "label": "Button Border Color",
-      "default": "#fff"
+      "default": "#444"
     },
     {
       "type": "color",
       "id": "button_border_hover_color",
       "label": "Button Hover Border Color",
-      "default": "#000"
+      "default": "#fff"
     },
     {
       "type": "font_picker",

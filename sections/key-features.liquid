@@ -1,0 +1,272 @@
+<div class="section">
+    <div class="container">
+        <div class="one-whole column">
+            <div class="headding-box text-align-center">
+                <h3>{{  section.settings.title | escape }}</h3>
+                <div class="headding-icons">
+                    <ul class="none relative display-inline-block margin-top-5 margin-bottom-0">
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                    </ul>
+                </div>
+                <p class="padding-y-10 margin-bottom-0">{{ section.settings.subtitle }}</p>
+            </div>
+            
+            <div class="key-features is-flex is-justify-center is-flex-wrap">
+                {% for block in section.blocks %}
+                    {%- case block.type -%}
+                        {%- when "features" -%}
+                            {% assign feature = block.settings %}
+                            <div class="key-feature width-33 width-sm-50 width-xs-100 padding-x-10 margin-top-20">
+                                <div class="key-feature-box padding-20 is-flex is-justify-center is-flex-wrap">
+                                    <div class="key-feature-icon width-100 is-flex is-justify-center is-align-center margin-bottom-10">
+                                        <span class="is-flex is-justify-center is-align-center">
+                                            <i class="{{  feature.icon }}"></i>
+                                        </span>
+                                    </div>
+                                    <h4 class="key-feature-title width-100 text-align-center">{{  feature.title | escape }}</h4>
+                                    <div class="key-feature-description width-100 text-align-center margin-top-5">{{  feature.content }}</div>
+                                </div>
+                            </div>
+                    {%- endcase -%}
+                {%- endfor -%}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+        background: {{ section.settings.section_bg_color }}
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:before {
+        background: linear-gradient(to right, #fff, {{section.settings.icon_color }});
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:after {
+        background: linear-gradient(to right, {{section.settings.icon_color }}, #fff);
+    }
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4 {
+        color: {{ section.settings.title_color }};
+        font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }}
+    }
+
+    #shopify-section-{{ section.id }} p {
+        color: {{ section.settings.text_color }};
+        font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }}
+    }
+
+
+    #shopify-section-{{ section.id }} .key-feature-box{
+        background: {{ section.settings.card_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .key-feature-box:hover {
+        background: {{ section.settings.card_hover_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .key-feature-icon span {
+        color: {{ section.settings.card_icon_color }};
+        border: 3px solid {{ section.settings.card_icon_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .key-feature-box:hover .key-feature-icon span{
+        border-color: {{ section.settings.card_hover_icon_bg_color }};
+        color: {{ section.settings.card_hover_icon_color }}
+    }
+    #shopify-section-{{ section.id }} .key-feature-icon span:after{
+        background: {{ section.settings.card_icon_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .key-feature-box:hover .key-feature-icon span:after {
+        background-color: {{ section.settings.card_icon_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .key-feature-box:hover .key-feature-title,
+    #shopify-section-{{ section.id }} .key-feature-box:hover .key-feature-description p{
+        color: {{ section.settings.card_hover_text_color }} !important;
+    }
+    #shopify-section-{{ section.id }} .key-feature-box:hover .key-feature-icon span:after {
+        background-color: #fff;
+    }
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Key Features",
+    "tag": "section",
+    "class": "key-features-container section-container margin-bottom-0 box-sizing-border-box padding-y-50",
+    "blocks": [
+        {
+            "type": "features",
+            "name": "Features",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "section_bg_color",
+                    "label": "Main Section Background Color",
+                    "default": "#f2eeeb"
+                },
+                {
+                    "type": "text",
+                    "id": "icon",
+                    "label": "Icon",
+                    "info": "Use Font Awesome icon. Use only the icon name. (e.g.- fa-solid fa-truck-fast)",
+                    "default": "fa-solid fa-trophy"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title",
+                    "default": "Free Shipping"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Content",
+                    "default": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                }
+            ]
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Key Features"
+        },
+        {
+            "type": "text",
+            "id": "icon",
+            "label": "Icon Name",
+            "default": "fa-regular fa-gem"
+        },
+        {
+            "type": "textarea",
+            "id": "subtitle",
+            "label": "Sub Title",
+            "default": "Lorem ipsum dolor sit amet<br>consectetueradipiscing elit, sed diam nonummy nibh"
+        },
+        {
+            "type": "color",
+            "id": "icon_color",
+            "label": "Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#444"
+        },
+        {
+            "type": "font_picker",
+            "id": "title_font",
+            "label": "Title Font",
+            "default": "rubik_n7"
+        },
+        {
+            "type": "font_picker",
+            "id": "text_font",
+            "label": "Text Font",
+            "default": "rubik_n4"
+        },
+        {
+            "type": "color",
+            "id": "card_icon_color",
+            "label": "Card Icon Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "card_hover_icon_color",
+            "label": "Card Hover Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "card_icon_bg_color",
+            "label": "Card Icon Background Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "card_hover_icon_bg_color",
+            "label": "Card Hover Icon Background Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "card_bg_color",
+            "label": "Card Background Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "card_hover_bg_color",
+            "label": "Card Hover Background Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "card_hover_text_color",
+            "label": "Card Hover Text Color",
+            "default": "#fff"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Key Features",
+            "blocks": [
+                {
+                    "type": "features",
+                    "settings": {
+                        "icon": "fa-solid fa-sack-dollar",
+                        "title": "Free Shipping",
+                        "content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                    }
+                },
+                {
+                    "type": "features",
+                    "settings": {
+                        "icon": "fa-solid fa-rocket",
+                        "title": "High-Quality Products",
+                        "content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                    }
+                },
+                {
+                    "type": "features",
+                    "settings": {
+                        "icon": "fa-solid fa-building-lock",
+                        "title": "Secure Payment Options",
+                        "content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                    }
+                },
+                {
+                    "type": "features",
+                    "settings": {
+                        "icon": "fa-solid fa-truck-fast",
+                        "title": "Fast Delivery",
+                        "content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                    }
+                },
+                {
+                    "type": "features",
+                    "settings": {
+                        "icon": "fa-solid fa-headset",
+                        "title": "Exceptional Customer Support",
+                        "content": "<p>This app is great. It does exactly what I need it to do and when I did run into a settings problem, the friendly chaps fix this within a short time.</p>"
+                    }
+                },
+            ],
+            "settings": {
+
+            }
+        }
+    ]
+}
+{% endschema %}

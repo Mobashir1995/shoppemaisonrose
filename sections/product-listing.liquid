@@ -1,0 +1,325 @@
+<div class="section">
+    <div class="container">
+        <div class="one-whole column">
+            <div class="headding-box text-align-center">
+                <h3>{{  section.settings.title | escape }}</h3>
+                <div class="headding-icons">
+                    <ul class="none relative display-inline-block margin-top-5 margin-bottom-0">
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                    </ul>
+                </div>
+                <p class="margin-bottom-20 padding-y-10 margin-bottom-10">{{ section.settings.subtitle }}</p>
+            </div>
+            <div class="category-box-container is-flex is-flex-wrap is-align-center is-justify-center">
+                {% for product in section.settings.products %}
+                    <div class="category-box width-25 width-md-33 width-xs-50 width-xxxs-100 {% if product.featured_image == blank %}without-image {% endif %}">
+                        <figure class="product-category-card relative">
+                            {% if product.featured_image != blank %}
+                                {{ product.featured_image | image_url: width: 400, height: 400, crop: "center" | image_tag: width: 400, height: 400, class: "width-100" }}
+                            {% else %}
+                                <img src="https://placehold.it/400x400" width="400" height="400" />
+                            {% endif %}
+                            <figcaption class="text-align-center">
+                                <div class="visible-part padding-x-10 padding-top-5 padding-bottom-10">
+                                    <h4><a href="{{ product.url }}">{{ product.title }}</a></h4>
+                                    <p class="margin-bottom-0 product-ratings">
+                                        {% liquid
+                                          assign user_ratings = product.metafields.deftyled.rating.value
+                                          assign positive_rating_ceil = user_ratings | append: "" | ceil
+                                          assign positive_rating = user_ratings | append: "" | floor
+                                          assign negative_rating = 5 | minus: positive_rating_ceil | floor
+                                          assign total_user_rating = positive_rating | plus: negative_rating
+                                        %}
+                                        <span class="total-star-rating">
+                                            {% for i in (1..positive_rating) %}
+                                                <i class="fa-solid fa-star"></i>
+                                            {% endfor %}
+                                            {% if total_user_rating < 5 %}
+                                                <i class="fa-solid fa-star-half-stroke"></i>
+                                            {% endif %}
+                                            {% for i in (1..negative_rating) %}
+                                                <i class="fa-regular fa-star"></i>
+                                            {% endfor %}
+                                        </span>
+                                        {% if product.metafields.deftyled.total_rating_count %}
+                                            <span class="total-rating-count font-weight-700">({{ product.metafields.deftyled.total_rating_count | escape }})</span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="margin-bottom-0">
+                                        <span class="regular-price"><span class="price "><span class="money">{{ product.price | money }}</span></span></span>
+                                        {% if product.compare_at_price %}
+                                            <del class="cross-price"><span class="price "><span class="money">{{ product.compare_at_price | money }}</span></span></del>
+                                        {% endif %}
+                                    </p>
+                                </div>
+                                <div class="description-box padding-10 is-flex is-justify-center is-flex-wrap">
+                                    {% if settings.quick_shop_enabled %}
+                                        <div data-fancybox data-src="#fancybox-product-{{ product.id }}" class="quick_shop action_button" data-gallery="product-{{ product.id }}-gallery">
+                                            {{ section.settings.button_text }}
+                                        </div>
+                                    {% else %}
+                                        <a
+                                            href="{{ product.url }}"
+                                            class="action_button"
+                                        >{{ section.settings.button_text }}</a>
+                                    {% endif %}
+                                </div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    {% render 'product-quick-view', product: product %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+        background: {{ section.settings.section_bg_color }}
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:before {
+        background: linear-gradient(to right, #fff, {{section.settings.icon_color }});
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:after {
+        background: linear-gradient(to right, {{section.settings.icon_color }}, #fff);
+    }
+    #shopify-section-{{ section.id }} .total-star-rating {
+        color: {{ section.settings.rating_icon_color }}
+    }
+    #shopify-section-{{ section.id }} .total-rating-count{
+        color: {{ section.settings.rating_count_color }}
+    }
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4 {
+        color: {{ section.settings.title_color }};
+        font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }}
+    }
+    #shopify-section-{{ section.id }} h4 a {
+        color: {{ section.settings.product_title_color }};
+    } 
+    #shopify-section-{{ section.id }} p {
+        color: {{ section.settings.text_color }};
+        font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }}
+    }
+
+    #shopify-section-{{ section.id }} .action_button {
+        color: {{ section.settings.button_color }};
+        border-color: {{ section.settings.button_border_color }};
+        background: {{ section.settings.button_background_color }};
+        font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }}
+    }
+    #shopify-section-{{ section.id }} .action_button:hover {
+        color: {{ section.settings.button_hover_color }};
+        border-color: {{ section.settings.button_border_hover_color }};
+        background: {{ section.settings.button_hover_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .visible-part{
+        background: {{ section.settings.card_bg_color }};
+    }
+    #shopify-section-{{ section.id }} figure:hover .visible-part{
+        background: {{ section.settings.card_hover_bg_color }};
+    }
+    #shopify-section-{{ section.id }} .product-listing-container figcaption {
+        border-top: 1px solid {{ section.settings.border_color }};
+    }
+    #shopify-section-{{ section.id }} .regular-price {
+        color: {{ section.settings.regular_price_color }};
+    }
+    #shopify-section-{{ section.id }} .cross-price {
+        color: {{ section.settings.cross_price_color }};
+    }
+    #shopify-section-{{ section.id }} figure:hover h3,
+    #shopify-section-{{ section.id }} figure:hover h4,
+    #shopify-section-{{ section.id }} figure:hover h4 a,
+    #shopify-section-{{ section.id }} figure:hover p,
+    #shopify-section-{{ section.id }} figure:hover span,
+    #shopify-section-{{ section.id }} figure:hover .total-star-rating,
+    #shopify-section-{{ section.id }} figure:hover .total-rating-count {
+        color: {{ section.settings.card_hover_text_color }}
+    }
+{% endstyle %}
+{% schema %}
+{
+    "name": "New Arrivals",
+    "tag": "section",
+    "class": "product-listing-container section-container margin-bottom-0 padding-y-50",
+    "settings": [
+        {
+            "type": "color",
+            "id": "section_bg_color",
+            "label": "Main Section Background Color",
+            "default": "#f2eeeb"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "New Arrivals"
+        },
+        {
+            "type": "text",
+            "id": "icon",
+            "label": "Icon Name",
+            "default": "fa-regular fa-gem"
+        },
+        {
+            "type": "textarea",
+            "id": "subtitle",
+            "label": "Sub Title",
+            "default": "Lorem ipsum dolor sit amet<br>consectetueradipiscing elit, sed diam nonummy nibh"
+        },
+        {
+            "type": "product_list",
+            "id": "products",
+            "label": "Choose Products",
+        },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Quick Shop"
+        },
+        {
+            "type": "color",
+            "id": "icon_color",
+            "label": "Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "rating_icon_color",
+            "label": "Rating Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "rating_count_color",
+            "label": "Rating Count Color",
+            "default": "#b3b3b3"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "product_title_color",
+            "label": "Product Title Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "regular_price_color",
+            "label": "Regular Price Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "cross_price_color",
+            "label": "Cross Price Color",
+            "default": "#b3b3b3"
+        },
+        {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "button_hover_color",
+            "label": "Button Hover Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "button_background_color",
+            "label": "Button Background Color",
+            "default": "#E0D9D0"
+        },
+        {
+            "type": "color",
+            "id": "button_hover_bg_color",
+            "label": "Button Hover Background Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "button_border_color",
+            "label": "Button Border Color",
+            "default": "#E0D9D0"
+        },
+        {
+            "type": "color",
+            "id": "button_border_hover_color",
+            "label": "Button Hover Border Color",
+            "default": "#444"
+        },
+        {
+            "type": "font_picker",
+            "id": "title_font",
+            "label": "Title Font",
+            "default": "rubik_n7"
+        },
+        {
+            "type": "font_picker",
+            "id": "text_font",
+            "label": "Text Font",
+            "default": "rubik_n4"
+        },
+        {
+            "type": "color",
+            "id": "card_bg_color",
+            "label": "Card Background Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "card_hover_bg_color",
+            "label": "Card Hover Background Color",
+            "default": "#E0D9D0"
+        },
+        {
+            "type": "color",
+            "id": "card_hover_text_color",
+            "label": "Card Hover Text Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "border_color",
+            "label": "Card Border Color",
+            "default": "#E0D9D0"
+        },
+    ],
+    "presets": [
+        {
+            "name": "Product Listings",
+            "settings": {
+                "products": [
+                    "addie-pillow",
+                    "aeon",
+                    "ada-stripe-pillow-cover",
+                    "ancram-lamp",
+                    "alva-sconce",
+                    "archie-pillow-cover",
+                    "arcane-pendant",
+                    "arden-rug-ocean-grey"
+                ],
+
+            }
+        }
+    ]
+}
+{% endschema %}

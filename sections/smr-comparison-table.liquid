@@ -1,0 +1,194 @@
+<div class="section">
+    <div class="container">
+        <div class="one-whole column">
+            <div class="headding-box text-align-center">
+                <h3>{{  section.settings.title | escape }}</h3>
+                <div class="headding-icons">
+                    <ul class="none relative display-inline-block margin-top-5 margin-bottom-0">
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                    </ul>
+                </div>
+                <p class="margin-bottom-20 padding-y-10 margin-bottom-10">{{ section.settings.subtitle }}</p>
+            </div>
+            
+            <div class="comparison-table-container">
+                {{ section.settings.table_page.content }}
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+        background: {{ section.settings.section_bg_color }}
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:before {
+        background: linear-gradient(to right, #fff, {{section.settings.icon_color }});
+    }
+    #shopify-section-{{ section.id }} .headding-icons ul:after {
+        background: linear-gradient(to right, {{section.settings.icon_color }}, #fff);
+    }
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4,
+    #shopify-section-{{ section.id }} th {
+        color: {{ section.settings.title_color }};
+        font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }}
+    }
+
+    #shopify-section-{{ section.id }} p,
+    #shopify-section-{{ section.id }} td {
+        color: {{ section.settings.text_color }};
+        font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }}
+    }
+
+
+    #shopify-section-{{ section.id }} .comparison-table-container table:before {
+        background: {{ section.settings.table_header_bg }};
+    }
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:nth-of-type(1) th{
+        background: {{ section.settings.table_header_bg }}
+    }
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:first-of-type th:nth-of-type(2){
+        color: {{ section.settings.table_focus_text_color }} !important;
+        border-top: 6px solid {{ section.settings.focus_border_color }} !important;
+        background: {{ section.settings.focus_border_color }};
+    }
+
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:nth-of-type(odd) td{
+        background: {{ section.settings.odd_row_bg }}
+    } 
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:nth-of-type(even) td{
+        background: {{ section.settings.even_row_bg }}
+    } 
+    #shopify-section-{{ section.id }} .comparison-table-container table tr td:nth-of-type(2),
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:first-of-type th:nth-of-type(2){
+        border-left: 6px solid {{ section.settings.focus_border_color }} !important;
+        border-right: 6px solid {{ section.settings.focus_border_color }} !important;
+    }
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:last-of-type td:nth-of-type(2) {
+        border-bottom: 6px solid {{ section.settings.focus_border_color }} !important;
+    }
+    #shopify-section-{{ section.id }} .comparison-table-container table tr:hover td{
+        background: {{ section.settings.focus_bg_color }};
+    }
+
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "SMR Comparison Table",
+    "tag": "section",
+    "class": "smr-comparison-table-container section-container margin-bottom-0 box-sizing-border-box padding-y-50",
+    "settings": [
+        {
+            "type": "color",
+            "id": "section_bg_color",
+            "label": "Main Section Background Color",
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Comparison Table"
+        },
+        {
+            "type": "text",
+            "id": "icon",
+            "label": "Icon Name",
+            "default": "fa-regular fa-gem"
+        },
+        {
+            "type": "textarea",
+            "id": "subtitle",
+            "label": "Sub Title",
+            "default": "Lorem ipsum dolor sit amet<br>consectetueradipiscing elit, sed diam nonummy nibh"
+        },
+        {
+            "type": "page",
+            "id": "table_page",
+            "label": "Select Comparison Table Page",
+        },
+        {
+            "type": "color",
+            "id": "icon_color",
+            "label": "Icon Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "title_color",
+            "label": "Title Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#444"
+        },
+        {
+            "type": "font_picker",
+            "id": "title_font",
+            "label": "Title Font",
+            "default": "rubik_n7"
+        },
+        {
+            "type": "font_picker",
+            "id": "text_font",
+            "label": "Text Font",
+            "default": "rubik_n4"
+        },
+        {
+            "type": "color",
+            "id": "odd_row_bg",
+            "label": "Odd Row BG Color",
+            "default": "#f2eeeb"
+        },
+        {
+            "type": "color",
+            "id": "even_row_bg",
+            "label": "Even Row BG Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "focus_bg_color",
+            "label": "Hover Row BG Color",
+            "default": "#E0D9D0"
+        },
+        {
+            "type": "color",
+            "id": "focus_border_color",
+            "label": "Focus Border Color",
+            "default": "#444"
+        },
+        {
+            "type": "color",
+            "id": "table_header_bg",
+            "label": "Table Header Background Color",
+            "default": "#E0D9D0"
+        },
+        {
+            "type": "color",
+            "id": "table_focus_text_color",
+            "label": "Table Focus Text Color",
+            "default": "#fff"
+        },
+    ],
+    "presets": [
+        {
+            "name": "SMR Comparison Table",
+            "blocks": [
+
+            ],
+            "settings": {
+
+            }
+        }
+    ]
+}
+{% endschema %}

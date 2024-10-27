@@ -4,13 +4,13 @@
     {% for block in section.blocks %}
         {%- case block.type -%}
             {%- when "offers" -%}
-                <div class="hooks-offer-box width-33">
+                <div class="hooks-offer-box margin-top-20 margin-bottom-20 width-33 width-md-50 width-sm-50 width-xs-100">
                     <div class="hooks-offer-box-content relative is-flex is-align-center is-justify-center is-flex-wrap" style="background-color: {{ block.settings.background }}">
                         {% if block.settings.image != blank %}
                             {{ block.settings.image | image_url: width: 700, height: 700, crop: "center" | image_tag: width: 700, height: 700 }}
                         {% endif %}
                         <div class="hook-offer-description">
-                            <div class="hook-offer-content is-flex is-flex-wrap {% if block.settings.offer_type == 'without_button' %}without-button {% else %} with-button {% endif %} ">
+                            <div class="hook-offer-content is-flex is-flex-wrap {% if block.settings.offer_type == 'without_button' %}without-button text-align-center{% else %} with-button {% endif %} ">
                                 <h3 
                                     class="width-100"
                                     style="font-family: {{ block.settings.font.family | append: ',' | append: block.settings.font.fallback_families }}; color: {{ block.settings.subtitle_color }}"
@@ -48,44 +48,15 @@
 </div>
 
 {% style %}
-  .hooks-offer {
-    margin: 0 auto;
-    padding: 50px 0;
-    max-width: 1170px;
-    width: 95%;
-  }
-  .hooks-offer-box-content {
-    min-height: 300px;
-    margin: 0 10px;
-  }
-  .hook-offer-description {
-    position: absolute;
-    left: 0;
-    padding: 10px 20px;
-  }
-  .hook-offer-content h3{
-    font-size: 16px;
-    font-weight: 400;
-  }
-  .hook-offer-content h2{
-    font-size: 32px;
-  }
-  .hook-offer-content.with-button .action_button {
-    max-width: 150px;
-    margin-top: 10px;
-  }
-  .hook-offer-content.without-button h2,
-  .hook-offer-content.without-button h3{
-    font-weight: 700;
-    text-align: center;
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.section_bg_color }}
   }
 {% endstyle %}
-    
 {% schema %}
   {
     "name": "Hooks & Offer",
     "tag": "section",
-    "class": "hooks-offer-container section-container margin-bottom-0 background-gray",
+    "class": "hooks-offer-container section-container margin-bottom-0",
     "blocks": [
         {
             "type": "offers",
@@ -200,6 +171,14 @@
             ]
         }
     ],
+    "settings": [
+        {
+            "type": "color",
+            "id": "section_bg_color",
+            "label": "Main Section Background Color",
+            "default": "#f2eeeb"
+        }
+    ],
     "presets": [
         {
             "name": "Hooks & Offers",
@@ -207,51 +186,51 @@
                 {
                     "type": "offers",
                     "settings": {
-                        "background": "#E2EBD8",
+                        "background": "#E0D9D0",
                         "offer_type": "with_button",
                         "subtitle": "Nutrition",
                         "title": "For Life",
                         "button_text": "Shop Now",
-                        "subtitle_color": "#27496e",
-                        "title_color": "#27496e",
+                        "subtitle_color": "#444",
+                        "title_color": "#444",
                         "button_color": "#FFF",
-                        "button_border_color": "#27496e",
-                        "button_background_color": "#27496e",
-                        "button_hover_color": "#27496e",
-                        "button_border_hover_color": "#27496e",
+                        "button_border_color": "#444",
+                        "button_background_color": "#444",
+                        "button_hover_color": "#444",
+                        "button_border_hover_color": "#444",
                         "button_hover_bg_color": "#FFF",
                     },
                 },
                 {
                     "type": "offers",
                     "settings": {
-                        "background": "#2F3A5A",
+                        "background": "#444",
                         "offer_type": "without_button",
                         "subtitle": "Nutrition for Sport",
                         "title": "Up To 50% Off",
-                        "subtitle_color": "#F86D06",
-                        "title_color": "#FFF"
+                        "subtitle_color": "#FFF",
+                        "title_color": "#E0D9D0"
                     },
                 },
                 {
                     "type": "offers",
                     "settings": {
-                        "background": "#ebdaa2",
+                        "background": "#d3d3d3",
                         "offer_type": "with_button",
                         "subtitle": "Vitamin",
                         "title": "For Kid",
                         "button_text": "Shop Now",
 
-                        "subtitle_color": "#FFF",
-                        "title_color": "#FFF",
-                        "button_color": "#FFF",
-                        "button_hover_color": "#db5110",
+                        "subtitle_color": "#444",
+                        "title_color": "#444",
+                        "button_color": "#444",
+                        "button_hover_color": "#fff",
 
-                        "button_border_color": "#db5110",
-                        "button_background_color": "#db5110",
+                        "button_border_color": "#f2eeeb",
+                        "button_background_color": "#f2eeeb",
                         
-                        "button_border_hover_color": "#db5110",
-                        "button_hover_bg_color": "#FFF",
+                        "button_border_hover_color": "#444",
+                        "button_hover_bg_color": "#444",
                     },
                 },
             ]
