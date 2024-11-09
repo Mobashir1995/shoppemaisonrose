@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section" id="explore-collection">
     <div class="container">
         <div class="one-whole column">
             <div class="headding-box text-align-center">
@@ -17,7 +17,7 @@
                     <div class="category-box width-25 width-md-33 width-sm-50 width-xxs-100 {% if collection.featured_image == blank %}without-image {% endif %}">
                         <figure class="product-category-card relative">
                             {% if collection.featured_image != blank %}
-                                {{ collection.featured_image | image_url: width: 400, height: 400, crop: "center" | image_tag: width: 400, height: 400, class: "width-100" }}
+                                {{ collection.featured_image | image_url: width: 400, height: 400, crop: "center" | image_tag: width: 400, height: 400, class: "width-100 image-responsive" }}
                             {% else %}
                                 <img src="https://placehold.it/400x400" width="400" height="400" />
                             {% endif %}
@@ -29,10 +29,8 @@
                                     {% endif %}
                                 </div>
                                 <div class="description-box padding-10 is-flex is-justify-center is-flex-wrap">
-                                    <h4>{{ collection.title }}</h4>
-                                    <p 
-                                        class="margin-top-5 margin-bottom-0"
-                                    >{{ collection.description | strip_html | escape | truncate: 80 }}</p>
+                                    <h4 class="width-100">{{ collection.title }}</h4>
+                                    <div class="margin-top-5 margin-bottom-0 width-100">{{ collection.metafields.custom.short_description | metafield_tag }}</div>
                                     <a
                                         href="{{ collection.url }}"
                                         class="action_button margin-top-15"
@@ -115,7 +113,7 @@
             "type": "textarea",
             "id": "subtitle",
             "label": "Sub Title",
-            "default": "Lorem ipsum dolor sit amet<br>consectetueradipiscing elit, sed diam nonummy nibh"
+            "default": "Discover decor that brings aesthetic <br /> beauty and artistic sophistication into your curated haven."
         },
         {
             "type": "collection_list",
@@ -211,7 +209,7 @@
         {
             "name": "Featured Categories",
             "settings": {
-                "collections": ["ceiling-lights", "pillows-throws", "rugs", "chandelier"]
+                "collections": ["ceiling-lights", "floor-lamps", "furniture", "table-lamps", "outdoor-lighting", "outdoor-planters", "pillows-throws", "rugs", "sconces", "summer-essentials"]
             }
         }
     ]

@@ -10,11 +10,15 @@
                         <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
                     </ul>
                 </div>
-                <p class="margin-bottom-20 padding-y-10 margin-bottom-10">{{ section.settings.subtitle }}</p>
+                {% if section.settings.subtitle != blank %}<p class="margin-bottom-20 padding-y-10 margin-bottom-10">{{ section.settings.subtitle }}</p>{% endif %}
             </div>
             
             <div class="comparison-table-container">
-                {{ section.settings.table_page.content }}
+                {% if section.settings.table_page != blank %}
+                    {{ section.settings.table_page.content }}
+                {% else %}
+                    {{ pages['comparison-table'].content }}
+                {% endif %}
             </div>
             
         </div>

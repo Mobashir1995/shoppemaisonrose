@@ -1,0 +1,242 @@
+<div class="section box-sizing-border-box">
+    <div class="container">
+
+        <hr />
+
+        <div class="width-15 width-sm-35 width-xxs-100 is-flex is-justify-start is-align-start padding-left-0 padding-right-0 is-xxs-block footer-description-section">
+            <div class="footer_content footer-text ">
+                <div class="footer-description line-height-20 font-size-14">
+                    {% if section.settings.footer_logo != blank %}
+                        {{ section.settings.footer_logo | image_url: crop: 'center' | image_tag: class: "footer-logo" }}
+                    {% else %}
+                        <img src="{{ 'footer-logo.png' | asset_url }}" alt="{{ shop.title }}" class="footer-logo" />
+                    {% endif %}
+                </div>
+            </div>              
+        </div>
+
+        <div class="width-34 width-md-30 width-sm-65 width-xxs-100 is-sm-flex is-sm-justify-end padding-x-20 is-xxs-block">
+            <div class="footer_content footer-text ">
+                <h6 class="footer-title">{{ section.settings.about_title }}</h6>
+                <div class="footer-description line-height-20 font-size-14">
+                    {{ section.settings.first_column_description }}
+                </div>
+            </div> 
+        </div>
+
+        <div class="width-15 width-md-17-half width-sm-33 width-xxs-100 is-sm-flex is-sm-justify-start padding-x-20 is-xxs-block footer-first-menu">
+            <div class="footer_menu">
+                {% liquid
+                  if section.settings.menu_one != blank
+                    assign menu_one = section.settings.menu_one
+                  else
+                    assign menu_one = 'collections'
+                  endif
+
+                  if section.settings.menu_two != blank
+                    assign menu_two = section.settings.menu_two
+                  else
+                    assign menu_two = 'information'
+                  endif
+                %}
+                
+                <h6 class="footer-title">{{ section.settings.menu_one_title  }}</h6>
+                    <ul class="none margin-bottom-0 line-height-20 font-size-14">
+                        {% for link in linklists[menu_one].links %}
+                            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+
+        <div class="width-15 width-md-17-half width-sm-33 width-xxs-100 is-sm-flex is-sm-justify-center padding-x-20 is-xxs-block footer-second-menu">
+            <div class="footer_menu">
+                <h6 class="footer-title">{{ section.settings.menu_two_title }}</h6>
+                <ul class="none margin-bottom-0 line-height-20 font-size-14">
+                    {% for link in linklists[menu_two].links %}
+                        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-contact-wrapper width-21 width-sm-33 width-xxs-100 is-sm-flex is-sm-justify-end is-flex-wrap is-xxs-block padding-left-20 padding-right-0">
+            <div class="footer_content footer-text width-100 is-sm-flex is-sm-justify-end is-flex-wrap is-xxs-block">
+                <h6 class="footer-title">{{ section.settings.last_column_title }}</h6>
+                <div class="footer-contact line-height-20 font-size-14">
+                    {% if settings.contact_phone != blank %}
+                        <p>
+                            <span><i class="fa-solid fa-phone"></i></span>
+                            <span><a href="tel: {{ settings.contact_phone }}">{{ settings.contact_phone }}</a></span>
+                        </p>
+                    {% endif %}
+                    {% if settings.contact_email != blank %}
+                        <p>
+                            <span><i class="fa-solid fa-envelope"></i></span>
+                            <span class="word-break-all"><a href="mailto: {{ settings.contact_email }}">{{ settings.contact_email }}.</a></span>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>              
+            <div class="footer-social-icons width-100 is-sm-flex is-sm-justify-start is-flex-wrap is-xxs-block">
+                <ul class="social_icons none margin-bottom-0 is-flex">
+                    {% if settings.facebook_link != blank %}
+                        <li>
+                            <a href="{{ settings.facebook_link }}" rel="me" target="_blank" class="icon-facebook margin-left-0"></a>
+                        </li>
+                    {% endif %}
+
+                    {% if settings.instagram_link != blank %}
+                        <li>
+                            <a href="{{ settings.instagram_link }}" rel="me" target="_blank" class="icon-instagram"></a>
+                        </li>
+                    {% endif %}
+
+                    {% if settings.pinterest_link != blank %}
+                        <li>
+                            <a href="{{ settings.pinterest_link }}" rel="me" target="_blank" class="icon-pinterest"></a>
+                        </li>
+                    {% endif %}
+
+                    {% if settings.twitter_link != blank %}
+                        <li>
+                            <a href="{{ settings.twitter_link }}" rel="me" target="_blank" class="icon-twitter"></a>
+                        </li>
+                    {% endif %}
+
+                    {% if settings.youtube_link != blank %}
+                        <li>
+                            <a href="{{ settings.youtube_link }}" rel="me" target="_blank" class="icon-youtube"></a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <hr />
+
+    <div class="container footer-bottom-container is-flex is-justify-space-between">
+        <div class="width-50 width-sm-100 footer-copyright is-sm-flex is-sm-justify-center" >
+            <p class="margin-bottom-0">&copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}. {{ section.settings.copyright_text | escape }}</p>
+        </div>
+        <div class="width-50 width-sm-100 is-sm-flex is-sm-justify-center">
+            <div class="payment_methods text-align-center">
+                {% for type in shop.enabled_payment_types %}
+                    {{ type | payment_type_svg_tag: class:'payment-icon' }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% style %}
+    #shopify-section-{{ section.id }} {
+        background: {{ section.settings.section_bg_color }}
+    }
+    #shopify-section-{{ section.id }} h3,
+    #shopify-section-{{ section.id }} h4,
+    #shopify-section-{{ section.id }} h6 {
+        color: {{ section.settings.title_color }};
+        font-family: {{ section.settings.title_font.family }}, {{ section.settings.title_font.fallback_families }}
+    }
+    #shopify-section-{{ section.id }} h4 a {
+        color: {{ section.settings.product_title_color }};
+    } 
+    #shopify-section-{{ section.id }} p,
+    #shopify-section-{{ section.id }} a,
+    #shopify-section-{{ section.id }} ul li {
+        color: {{ section.settings.text_color }};
+        font-family: {{ section.settings.text_font.family }}, {{ section.settings.text_font.fallback_families }}
+    }
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Footer Two",
+    "tag": "section",
+    "class": "footer-section section-container margin-bottom-0 padding-y-50 relative",
+    "settings": [
+        {
+            "type": "color",
+            "id": "section_bg_color",
+            "label": "Main Section Background Color",
+            "default": "#f2eeeb"
+        },
+        {
+            "type": "image_picker",
+            "id": "footer_logo",
+            "label": "Footer Logo",
+        },
+        {
+            "type": "text",
+            "id": "about_title",
+            "label": "Menu One Title",
+            "default": "About Us"
+        },
+        {
+            "type": "richtext",
+            "id": "first_column_description",
+            "label": "First Column Description",
+            "default": "<p>Shoppe Maison Rose is an online boutique home goods shop. From classic designs to modern styles, we offer a wide range of luxury goods, including pillows, furniture, rugs, lighting, and more. We take pride in the quality and style, ensuring each piece brings elegance and character to your space.</p>"
+        },
+        {
+            "type": "text",
+            "id": "menu_one_title",
+            "label": "Menu One Title",
+            "default": "Shop"
+        },
+        {
+            "type": "link_list",
+            "id": "menu_one",
+            "label": "Menu One",
+            "default": ""
+        },
+        {
+            "type": "text",
+            "id": "menu_two_title",
+            "label": "Menu Two Title",
+            "default": "Company"
+        },
+        {
+            "type": "link_list",
+            "id": "menu_two",
+            "label": "Menu Two",
+            "default": ""
+        },
+        {
+            "type": "text",
+            "id": "last_column_title",
+            "label": "Last Column Title",
+            "default": "Follow Us"
+        },
+        {
+            "type": "text",
+            "id": "copyright_text",
+            "label": "Copyright Text",
+            "default": "All Rights Reserved."
+        },
+        {
+            "type": "font_picker",
+            "id": "title_font",
+            "label": "Title Font",
+            "default": "garamond_n7"
+        },
+        {
+            "type": "font_picker",
+            "id": "text_font",
+            "label": "Text Font",
+            "default": "garamond_n4"
+        },
+    ],
+    "presets": [
+        {
+            "name": "Footer",
+            "settings": {
+                
+            }
+        }
+    ]
+}
+{% endschema %}

@@ -1,13 +1,25 @@
+{% comment %}   
+1st box image url = ScreenShot2023-06-14at4.45.35PM
+3rd box image url = ScreenShot2021-11-02at11.38.29AM
 
-  
+{% endcomment %}
 <div class="hooks-offer is-flex is-align-center is-justify-center is-flex-wrap text-align-left">
     {% for block in section.blocks %}
         {%- case block.type -%}
             {%- when "offers" -%}
-                <div class="hooks-offer-box margin-top-20 margin-bottom-20 width-33 width-md-50 width-sm-50 width-xs-100">
+                <div class="hooks-offer-box margin-top-20 margin-bottom-20 width-33 width-md-50 width-sm-50 width-xs-100 overflow-hidden">
                     <div class="hooks-offer-box-content relative is-flex is-align-center is-justify-center is-flex-wrap" style="background-color: {{ block.settings.background }}">
                         {% if block.settings.image != blank %}
-                            {{ block.settings.image | image_url: width: 700, height: 700, crop: "center" | image_tag: width: 700, height: 700 }}
+                            {{ block.settings.image | image_url: width: 700, height: 700, crop: "center" | image_tag: width: 700, height: 700, class: 'image-responsive' }}
+                        {% else %}
+                            {% liquid
+                              assign placeholder_image = 'rugs-for-every-room.png' | asset_url
+                              if forloop.index == 3
+                                assign placeholder_image = 'statement-lighting.png' | asset_url
+                              endif
+
+                            %}
+                            {% if forloop.index != 2 %}<img src="{{ placeholder_image }}" height="700" width="700" class="width-100">{% endif %}
                         {% endif %}
                         <div class="hook-offer-description">
                             <div class="hook-offer-content is-flex is-flex-wrap {% if block.settings.offer_type == 'without_button' %}without-button text-align-center{% else %} with-button {% endif %} ">
@@ -188,8 +200,8 @@
                     "settings": {
                         "background": "#E0D9D0",
                         "offer_type": "with_button",
-                        "subtitle": "Nutrition",
-                        "title": "For Life",
+                        "subtitle": "Rugs for",
+                        "title": "Every Room",
                         "button_text": "Shop Now",
                         "subtitle_color": "#444",
                         "title_color": "#444",
@@ -199,6 +211,7 @@
                         "button_hover_color": "#444",
                         "button_border_hover_color": "#444",
                         "button_hover_bg_color": "#FFF",
+                        "button_url": "/collections/rugs"
                     },
                 },
                 {
@@ -206,8 +219,8 @@
                     "settings": {
                         "background": "#444",
                         "offer_type": "without_button",
-                        "subtitle": "Nutrition for Sport",
-                        "title": "Up To 50% Off",
+                        "subtitle": "Get 10% off your first order",
+                        "title": "Code: FIRST10",
                         "subtitle_color": "#FFF",
                         "title_color": "#E0D9D0"
                     },
@@ -217,20 +230,18 @@
                     "settings": {
                         "background": "#d3d3d3",
                         "offer_type": "with_button",
-                        "subtitle": "Vitamin",
-                        "title": "For Kid",
+                        "subtitle": "",
+                        "title": "Statement Lighting",
                         "button_text": "Shop Now",
-
                         "subtitle_color": "#444",
                         "title_color": "#444",
                         "button_color": "#444",
                         "button_hover_color": "#fff",
-
-                        "button_border_color": "#f2eeeb",
+                        "button_border_color": "#444",
                         "button_background_color": "#f2eeeb",
-                        
                         "button_border_hover_color": "#444",
                         "button_hover_bg_color": "#444",
+                        "button_url": "/collections/ceiling-lights"
                     },
                 },
             ]

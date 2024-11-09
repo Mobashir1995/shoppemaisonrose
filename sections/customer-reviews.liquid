@@ -10,7 +10,7 @@
                         <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
                     </ul>
                 </div>
-                <p class="padding-y-10 margin-bottom-0">{{ section.settings.subtitle }}</p>
+                {% if section.settings.subtitle != blank %}<p class="padding-y-10 margin-bottom-0">{{ section.settings.subtitle }}</p>{% endif %}
             </div>
             
             <div class="customer-reviews-container is-flex is-flex-wrap is-justify-center">

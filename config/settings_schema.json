@@ -1323,6 +1323,23 @@
     ]
   },
   {
+    "name": "Contact",
+    "settings": [
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Email",
+        "default": "support@maisonroseinteriors.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Phone",
+        "default": "949-637-7363"
+      }
+    ]
+  },
+  {
     "name": "DISQUS comments",
     "settings": [
       {

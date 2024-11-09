@@ -2,15 +2,17 @@
     <div class="container">
         <div class="one-whole column">
             <div class="headding-box text-align-center">
-                <h3>{{  section.settings.title | escape }}</h3>
-                <div class="headding-icons">
-                    <ul class="none relative display-inline-block margin-top-5 margin-bottom-0">
-                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
-                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
-                        <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
-                    </ul>
-                </div>
-                <p class="padding-y-10 margin-bottom-0">{{ section.settings.subtitle }}</p>
+                {% if section.settings.title != blank %}
+                    <h3>{{ section.settings.title | escape }}</h3>
+                    <div class="headding-icons">
+                        <ul class="none relative display-inline-block margin-top-5 margin-bottom-0">
+                            <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                            <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                            <li class="display-inline-block"><span style="color: {{section.settings.icon_color }}; border-color: {{section.settings.icon_color }}"><i class="{{ section.settings.icon }}" aria-hidden="true"></i></span></li>
+                        </ul>
+                    </div>
+                {% endif %}
+                {% if section.settings.subtitle != blank %}<p class="padding-y-10 margin-bottom-0">{{ section.settings.subtitle }}</p>{% endif %}
             </div>
             
             <div class="key-features is-flex is-justify-center is-flex-wrap">

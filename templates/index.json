@@ -1,0 +1,234 @@
+{
+  "wrapper": "div.index-sections",
+  "sections": {
+    "hero_banner": {
+      "type": "hero-banner",
+      "settings": {
+        "subtitle": "Welcome to Shoppe Maison Rose",
+        "focused_title": "Crafting timeless elegance",
+        "title": "for your refined space",
+        "description": "",
+        "button_text": "Explore Collections",
+        "button_url": "#explore-collection"
+      },
+    },
+    "hooks_offers": {
+      "type": "hooks-offer",
+      "blocks": {
+          "box1" : {
+              "type": "offers",
+              "settings": {
+                  "background": "#E0D9D0",
+                  "offer_type": "with_button",
+                  "subtitle": "Rugs for",
+                  "title": "Every Room",
+                  "button_text": "Shop Now",
+                  "subtitle_color": "#444",
+                  "title_color": "#444",
+                  "button_color": "#FFF",
+                  "button_border_color": "#444",
+                  "button_background_color": "#444",
+                  "button_hover_color": "#444",
+                  "button_border_hover_color": "#444",
+                  "button_hover_bg_color": "#FFF",
+                  "button_url": "/collections/rugs"
+              },
+          },
+          "box2" : {
+              "type": "offers",
+              "settings": {
+                  "background": "#444",
+                  "offer_type": "without_button",
+                  "subtitle": "Get 10% off your first order",
+                  "title": "Code: FIRST10",
+                  "subtitle_color": "#FFF",
+                  "title_color": "#E0D9D0"
+              },
+          },
+          "box3" : {
+              "type": "offers",
+              "settings": {
+                  "background": "#d3d3d3",
+                  "offer_type": "with_button",
+                  "subtitle": "",
+                  "title": "Statement Lighting",
+                  "button_text": "Shop Now",
+                  "subtitle_color": "#444",
+                  "title_color": "#444",
+                  "button_color": "#444",
+                  "button_hover_color": "#fff",
+                  "button_border_color": "#444",
+                  "button_background_color": "#f2eeeb",
+                  "button_border_hover_color": "#444",
+                  "button_hover_bg_color": "#444",
+                  "button_url": "/collections/ceiling-lights"
+              },
+          },
+      },
+      "block_order": [
+        "box1",
+        "box2",
+        "box3"
+      ],
+    },
+    "featured_collections": {
+      "type" : "featured-categories",
+      "settings": {
+          "title": "Featured Collections",
+          "collections": [
+            "ceiling-lights",
+            "floor-lamps",
+            "furniture",
+            "table-lamps",
+            "outdoor-lighting",
+            "outdoor-planters",
+            "pillows-throws",
+            "rugs",
+            "sconces",
+            "summer-essentials"
+          ]
+        }
+    },
+    "new_arrivals": {
+      "type": "product-listing",
+      "settings": {
+          "products": [
+              "addie-pillow",
+              "aeon",
+              "ada-stripe-pillow-cover",
+              "ancram-lamp",
+              "alva-sconce",
+              "archie-pillow-cover",
+              "arcane-pendant",
+              "arden-rug-ocean-grey"
+          ],
+      }
+    },
+    "customer_reviews": {
+      "type": "customer-reviews",
+      "settings": {
+        "title": "Customer Reviews",
+        "subtitle": "",
+      },
+      "blocks":{
+        "review1": {
+            "type": "review",
+            "settings": {
+                "rating": 5,
+                "review_content": "<p>I couldn’t be happier with my Cadence White light. It adds warmth and ambient glow that’s just right!</p>",
+                "name": "Cara Willson",
+                "designation": "",
+                "organization": ""
+            },
+        },
+        "review2": {
+            "type": "review",
+            "settings": {
+                "rating": 5,
+                "review_content": "<p>Bought a Calabria Lamp a while back. I absolutely love the earthly base with classic shade. The shade is perfect size and provides ample light</p>",
+                "name": "Brandon Dudley",
+                "designation": "",
+                "organization": ""
+            },
+        },
+        "review3": {
+            "type": "review",
+            "settings": {
+                "rating": 5,
+                "review_content": "<p>I was confused with the rug choice for my Scandinavian-style living room. Decided to go with the Neda Neutral. The loom is quite nice. Feels soft underfoot too!</p>",
+                "name": "Holly Harden",
+                "designation": "",
+                "organization": ""
+            },
+        },
+        "review4": {
+            "type": "review",
+            "settings": {
+                "rating": 5,
+                "review_content": "<p>I'm impressed with the quality of this sconce. For something to match the old world vibe, the brass finish is well-done, and the shade is sturdy.</p>",
+                "name": "Margarita Hays",
+                "designation": "",
+                "organization": ""
+            },
+        },
+      },
+      "block_order": [
+        "review1",
+        "review2",
+        "review3",
+        "review4"
+      ]
+    },
+    "key_features": {
+      "type": "key-features",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+      },
+      "blocks": {
+        "feature_1" : {
+            "type": "features",
+            "settings": {
+                "icon": "fa-solid fa-sack-dollar",
+                "title": "Free Shipping",
+                "content": "<p>Delivering luxury directly to your doorstep without additional cost all across the US.</p>"
+            }
+        },
+        "feature_2" : {
+            "type": "features",
+            "settings": {
+                "icon": "fa-solid fa-rocket",
+                "title": "High-Quality Products",
+                "content": "<p>Crafted with precision and care, our pieces are made to meet the highest standards.</p>"
+            }
+        },
+        "feature_3" : {
+            "type": "features",
+            "settings": {
+                "icon": "fa-solid fa-building-lock",
+                "title": "Secure Payment Options",
+                "content": "<p>Shop with confidence- our secure payment options protect your information. You can enjoy a seamless, worry-free experience.</p>"
+            }
+        },
+        "feature_4" : {
+            "type": "features",
+            "settings": {
+                "icon": "fa-solid fa-truck-fast",
+                "title": "Fast Delivery",
+                "content": "<p>Bringing sophistication to your home sooner than you expect without compromising quality.</p>"
+            }
+        },
+        "feature_5" : {
+            "type": "features",
+            "settings": {
+                "icon": "fa-solid fa-headset",
+                "title": "Exceptional Customer Support",
+                "content": "<p>Our dedicated team is here to assist you at every step. Enjoy an effortless and enjoyable shopping experience designed around your satisfaction.</p>"
+            }
+        },
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ]
+    },
+    "comparison_table": {
+      "type": "smr-comparison-table",
+      "settings": {
+        "title": "Why Shoppe Maison Rose?",
+        "subtitle": ""
+      }
+    }
+  },
+  "order": [
+    "hero_banner",
+    "hooks_offers",
+    "featured_collections",
+    "new_arrivals",
+    "customer_reviews",
+    "key_features",
+    "comparison_table"
+  ]
+}

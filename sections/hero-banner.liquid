@@ -1,3 +1,4 @@
+{% comment %} smr-hero-banner-1920-optimized {% endcomment %}
 {% liquid 
   assign imgage_overlay = 'rgba(0 0 0 , 0.5)'
   assign text_font_family = ''
@@ -38,9 +39,9 @@
 
 <div class="hero-banner relative is-flex is-align-center text-align-left">
     {% if section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1920, height: 550, crop: 'center' | image_tag: width: 1920, height: 550, class: "width-100" }}
+      {{ section.settings.image | image_url: width: 1920, crop: 'center' | image_tag: width: 1920, class: "width-100" }}
     {% else %}
-      <img src="{{ 'password-page-background.jpg' | asset_url }}" class="width-100" width="1920" height="550" />
+      <img src="{{ 'smr-hero-banner.jpg' | asset_url }}" class="width-100" width="1920" />
     {% endif %}
     <div class="hero-banner-content">
       <div class="hero-banner-description is-flex is-flex-wrap">
@@ -94,13 +95,13 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image",
-      "info": "prefered dimension is 1920x550px"
+      "info": "prefered dimension is 1920x800px"
     },
     {
       "type": "color_background",
       "id": "image_overlay",
       "label": "Image Overlay Color",
-      "default": "rgba(242,238,235,0.3)",
+      "default": "rgba(241, 242, 246, 0.3)",
       "info": "use rgba() color code. Otherwise this will override the banner"
     },
     {
@@ -112,7 +113,7 @@
       "type": "color",
       "id": "subtitle_color",
       "label": "Subtitle Color",
-      "default": "#fff"
+      "default": "#444"
     },
     {
       "type": "text",
@@ -123,7 +124,7 @@
       "type": "color",
       "id": "focused_title_color",
       "label": "Focused Title Color",
-      "default": "#E0D9D0"
+      "default": "#444"
     },
     {
       "type": "text",
@@ -134,7 +135,7 @@
       "type": "color",
       "id": "title_color",
       "label": "Title Color",
-      "default": "#fff"
+      "default": "#444"
     },
     {
       "type": "textarea",
@@ -198,13 +199,13 @@
       "type": "font_picker",
       "id": "title_font",
       "label": "Title Font",
-      "default": "rubik_n7"
+      "default": "garamond_n7"
     },
     {
       "type": "font_picker",
       "id": "text_font",
       "label": "Text Font",
-      "default": "rubik_n4"
+      "default": "garamond_n4"
     }
   ],
   "presets": [
