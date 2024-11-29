@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "presets": {
     "London": {
@@ -109,7 +118,7 @@
       "limit_quantity": false,
       "display_inventory_left": true,
       "notify_me_form": true,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "swatches",
       "free_price_text": "Free",
       "size_chart": "size-guide",
@@ -130,8 +139,8 @@
       "currency_format": "money_format",
       "search_option": "product",
       "favicon": "",
-      "checkout_header_image": "shopify:\/\/shop_images\/banner-hail2.jpg",
-      "checkout_logo_image": "shopify:\/\/shop_images\/london-logo-white.png",
+      "checkout_header_image": "shopify://shop_images/banner-hail2.jpg",
+      "checkout_logo_image": "shopify://shop_images/london-logo-white.png",
       "checkout_logo_position": "right",
       "checkout_logo_size": "medium",
       "checkout_body_background_image": "",
@@ -357,7 +366,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -366,7 +375,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -375,7 +384,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -436,11 +445,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -459,7 +468,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -482,7 +491,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -491,7 +500,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -500,7 +509,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -524,7 +533,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -583,7 +592,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -717,7 +726,7 @@
       "limit_quantity": false,
       "display_inventory_left": false,
       "notify_me_form": false,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "dropdown",
       "free_price_text": "Free",
       "size_chart": "",
@@ -739,7 +748,7 @@
       "search_option": "product",
       "favicon": "",
       "checkout_header_image": "",
-      "checkout_logo_image": "shopify:\/\/shop_images\/responsive-paris-logo-08-09-18-01.png",
+      "checkout_logo_image": "shopify://shop_images/responsive-paris-logo-08-09-18-01.png",
       "checkout_logo_position": "left",
       "checkout_logo_size": "medium",
       "checkout_body_background_image": "",
@@ -965,7 +974,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -974,7 +983,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -983,7 +992,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -1044,11 +1053,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -1067,7 +1076,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -1090,7 +1099,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1099,7 +1108,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1108,7 +1117,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1132,7 +1141,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -1191,7 +1200,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -1325,7 +1334,7 @@
       "limit_quantity": false,
       "display_inventory_left": false,
       "notify_me_form": true,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "swatches",
       "free_price_text": "Free",
       "size_chart": "",
@@ -1345,9 +1354,9 @@
       "shipping_calculator_default_country": "United States",
       "currency_format": "money_format",
       "search_option": "product",
-      "favicon": "shopify:\/\/shop_images\/favicon-ny2.png",
-      "checkout_header_image": "shopify:\/\/shop_images\/form.jpg",
-      "checkout_logo_image": "shopify:\/\/shop_images\/NYC-logo-red.png",
+      "favicon": "shopify://shop_images/favicon-ny2.png",
+      "checkout_header_image": "shopify://shop_images/form.jpg",
+      "checkout_logo_image": "shopify://shop_images/NYC-logo-red.png",
       "checkout_logo_position": "left",
       "checkout_logo_size": "medium",
       "checkout_body_background_image": "",
@@ -1598,7 +1607,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -1607,7 +1616,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -1616,7 +1625,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -1677,11 +1686,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -1700,7 +1709,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -1723,7 +1732,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1732,7 +1741,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1741,7 +1750,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -1765,7 +1774,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -1824,7 +1833,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -1958,7 +1967,7 @@
       "limit_quantity": false,
       "display_inventory_left": false,
       "notify_me_form": true,
-      "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+      "notify_me_richtext": "<p>Notify me when this product is available:</p>",
       "product_form_style": "dropdown",
       "free_price_text": "Free",
       "size_chart": "",
@@ -1979,8 +1988,8 @@
       "currency_format": "money_format",
       "search_option": "product",
       "favicon": "",
-      "checkout_header_image": "shopify:\/\/shop_images\/SS-petals-light.jpg",
-      "checkout_logo_image": "shopify:\/\/shop_images\/logo5.png",
+      "checkout_header_image": "shopify://shop_images/SS-petals-light.jpg",
+      "checkout_logo_image": "shopify://shop_images/logo5.png",
       "checkout_logo_position": "left",
       "checkout_logo_size": "large",
       "checkout_body_background_image": "",
@@ -2206,7 +2215,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 1",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             },
             "1478221000214-1": {
@@ -2215,7 +2224,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 2",
-                "text": "<p>Optional text can go here<\/p>"
+                "text": "<p>Optional text can go here</p>"
               }
             },
             "1478221000214-2": {
@@ -2224,7 +2233,7 @@
                 "image": "",
                 "link": "",
                 "title": "Promo 3",
-                "text": "<p>Optional text&nbsp;can go here<\/p>"
+                "text": "<p>Optional text&nbsp;can go here</p>"
               }
             }
           },
@@ -2285,11 +2294,11 @@
             "footer_linklist_2": "footer",
             "footer_linklist_1": "",
             "title": "text column",
-            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.<\/p>",
+            "footer_content_right": "<p>This right-hand column can be used to include some&nbsp;additional text, such as an address or contact info.</p>",
             "footer_content_page": "",
             "footer_alignment": "center",
             "footer_newsletter": true,
-            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…<\/p>",
+            "newsletter_richtext": "<p>Sign up to get the latest on sales, new releases and more…</p>",
             "display_payment_methods": true,
             "copyright_text": ""
           }
@@ -2308,7 +2317,7 @@
           "settings": {
             "image": "",
             "title": "Talk about your brand",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
             "button_label": "",
             "button_link": "",
             "text_size": "regular_text",
@@ -2331,7 +2340,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -2340,7 +2349,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -2349,7 +2358,7 @@
               "type": "quote",
               "settings": {
                 "image": "",
-                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+                "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
                 "name": "John Doe",
                 "site_link": ""
               }
@@ -2373,7 +2382,7 @@
             "autoplay": false,
             "autoloop": true,
             "video_dark_overlay": false,
-            "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
             "image": "",
             "display_text_over_video": false,
             "button_label": "Play Video",
@@ -2432,7 +2441,7 @@
             "image": "",
             "store_hours": true,
             "title": "Come and visit",
-            "address_and_hours": "<p>123 Fake Street,&nbsp;<\/p>\n<p>Toronto, Canada<\/p>\n<p>Mon - Fri, 10am - 9pm<\/p>\n<p>Saturday, 11am - 9pm<\/p>\n<p>Sunday, 11am - 5pm<\/p>",
+            "address_and_hours": "<p>123 Fake Street,&nbsp;</p>\n<p>Toronto, Canada</p>\n<p>Mon - Fri, 10am - 9pm</p>\n<p>Saturday, 11am - 9pm</p>\n<p>Sunday, 11am - 5pm</p>",
             "info_text_color": "#000000",
             "info_color": "#ededed",
             "text_alignment": "left",
@@ -2553,7 +2562,7 @@
     "free_price_text": "Free",
     "size_chart": "",
     "notify_me_form": false,
-    "notify_me_richtext": "<p>Notify me when this product is available:<\/p>",
+    "notify_me_richtext": "<p>Notify me when this product is available:</p>",
     "enable_shopify_review_comments": true,
     "review_position": "bottom",
     "enable_shopify_collection_badges": false,
@@ -2569,12 +2578,12 @@
     "newsletter_popup_title": "Subscribe to get 10% OFF",
     "rounded_social_icons": false,
     "twitter_link": "",
-    "facebook_link": "https:\/\/www.facebook.com\/shoppemaisonrose\/",
+    "facebook_link": "https://www.facebook.com/shoppemaisonrose/",
     "youtube_link": "",
     "vimeo_link": "",
     "pinterest_link": "",
     "tumblr_link": "",
-    "instagram_link": "https:\/\/www.instagram.com\/shoppemaisonrose\/",
+    "instagram_link": "https://www.instagram.com/shoppemaisonrose/",
     "linkedin_link": "",
     "flickr_link": "",
     "email_link": "",
@@ -2586,9 +2595,9 @@
     "shipping_calculator_default_country": "United States",
     "currency_format": "money_format",
     "search_option": "product",
-    "favicon": "shopify:\/\/shop_images\/Shoppe_Logo_Stacked_450x_2.png",
+    "favicon": "shopify://shop_images/Shoppe_Logo_Stacked_450x_2.png",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/responsive-paris-logo-08-09-18-01.png",
+    "checkout_logo_image": "shopify://shop_images/responsive-paris-logo-08-09-18-01.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -2801,11 +2810,11 @@
           "064a9e84-cb47-4fba-b54a-19e73585cb51": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Web.jpg",
+              "image": "shopify://shop_images/Web.jpg",
               "title": "Home Tour Event!",
               "subtext": "Code:HT24",
               "button_label": "SHOP NOW",
-              "link": "shopify:\/\/collections",
+              "link": "shopify://collections",
               "text_position": "left",
               "text_align": "left"
             }
@@ -2830,7 +2839,7 @@
             "settings": {
               "link": "",
               "title": "Promo 1",
-              "text": "<p>Optional text can go here<\/p>"
+              "text": "<p>Optional text can go here</p>"
             }
           },
           "1478221000214-1": {
@@ -2838,7 +2847,7 @@
             "settings": {
               "link": "",
               "title": "Promo 2",
-              "text": "<p>Optional text can go here<\/p>"
+              "text": "<p>Optional text can go here</p>"
             }
           },
           "1478221000214-2": {
@@ -2846,14 +2855,14 @@
             "settings": {
               "link": "",
               "title": "Promo 3",
-              "text": "<p>Optional text can go here<\/p>"
+              "text": "<p>Optional text can go here</p>"
             }
           },
           "7a17ad42-5dd6-4c6a-9274-d2098968e19a": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Web.jpg",
-              "link": "shopify:\/\/collections\/table-lamps",
+              "image": "shopify://shop_images/Web.jpg",
+              "link": "shopify://collections/table-lamps",
               "title": "",
               "text": ""
             }
@@ -2904,13 +2913,13 @@
           "show_locale_selector": false,
           "show_currency_selector": false,
           "fix_top_bar": true,
-          "search_box_top_bar": false,
+          "search_box_top_bar": true,
           "top_bar_linklist": "",
           "phone_number": "",
-          "logo": "shopify:\/\/shop_images\/logo1.png",
+          "logo": "shopify://shop_images/logo1.png",
           "logo_width": 360,
           "logo_alignment": "center",
-          "logo_mobile": "shopify:\/\/shop_images\/logo1.png",
+          "logo_mobile": "shopify://shop_images/logo1.png",
           "header_social_icons": true,
           "main_linklist": "main-menu",
           "menu_alignment": "center",
@@ -2945,7 +2954,7 @@
           "1535001843655-0": {
             "type": "quote",
             "settings": {
-              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
               "name": "John Doe",
               "site_link": ""
             }
@@ -2953,7 +2962,7 @@
           "1535001843655-1": {
             "type": "quote",
             "settings": {
-              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
               "name": "John Doe",
               "site_link": ""
             }
@@ -2961,7 +2970,7 @@
           "1535001843655-2": {
             "type": "quote",
             "settings": {
-              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.<\/p>",
+              "testimonial": "<p>Include some of your favorite customer quotes and feedback here as social proof, to build credibility and trust for your services and products.</p>",
               "name": "John Doe",
               "site_link": ""
             }
@@ -2991,7 +3000,7 @@
           "mute_video": false,
           "video_controls": false,
           "video_dark_overlay": false,
-          "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "video": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
           "html5_video": "",
           "display_text_over_video": false,
           "heading": "",
@@ -3050,7 +3059,7 @@
           "map_address": "",
           "store_hours": true,
           "title": "Come and visit",
-          "address_and_hours": "<p>123 Fake Street, <\/p><p>Toronto, Canada<\/p><p>Mon - Fri, 10am - 9pm<\/p><p>Saturday, 11am - 9pm<\/p><p>Sunday, 11am - 5pm<\/p>",
+          "address_and_hours": "<p>123 Fake Street, </p><p>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm</p><p>Saturday, 11am - 9pm</p><p>Sunday, 11am - 5pm</p>",
           "info_text_color": "#000000",
           "info_color": "#ededed",
           "text_alignment": "left",
@@ -3065,7 +3074,7 @@
       "contact-template": {
         "type": "contact-template",
         "settings": {
-          "contact_image": "shopify:\/\/shop_images\/contact-us-image.jpg",
+          "contact_image": "shopify://shop_images/contact-us-image.jpg",
           "contact_subheading": "",
           "contact_content": "",
           "contact_text_position": "row",
@@ -3073,7 +3082,7 @@
           "wide_display": false,
           "enable_padding": true,
           "title": "Come and visit!",
-          "address_and_hours": "<p>123 Fake Street<\/p><p>Toronto, Canada<\/p><p>Mon - Fri, 10am - 9pm<\/p><p>Saturday, 11am - 9pm<\/p><p>Sunday, 11am - 5pm<\/p>",
+          "address_and_hours": "<p>123 Fake Street</p><p>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm</p><p>Saturday, 11am - 9pm</p><p>Sunday, 11am - 5pm</p>",
           "map_address": "",
           "button_label": "Get directions",
           "text_alignment": "left",
@@ -3094,7 +3103,7 @@
             "type": "rich_text_and_image",
             "settings": {
               "title": "About Rose",
-              "content": "<p>As principal at Maison Rose Interiors, Rose instills a bit of natural Canadian warmth where she was born and raised, and coastal California where she now lives.  Rose’s culturally diverse background and travels abroad are seen in all her objects and ever evolving style.  No matter what the style she is asked to create, each space designed by Rose is refined, collected, and unique.<\/p>",
+              "content": "<p>As principal at Maison Rose Interiors, Rose instills a bit of natural Canadian warmth where she was born and raised, and coastal California where she now lives.  Rose’s culturally diverse background and travels abroad are seen in all her objects and ever evolving style.  No matter what the style she is asked to create, each space designed by Rose is refined, collected, and unique.</p>",
               "text_size": "featured_text",
               "text_alignment": "center",
               "button_label": "",
@@ -3104,11 +3113,11 @@
           "8c8ee93b-f936-4854-b6a6-93173b063d69": {
             "type": "image_with_text",
             "settings": {
-              "image": "shopify:\/\/shop_images\/034.jpg",
+              "image": "shopify://shop_images/034.jpg",
               "layout": "left",
               "text_alignment": "left",
               "title": "Our Story",
-              "text": "<p>Introducing a boutique home goods online shop that is sure to elevate the look of any living space. Shoppe Maison Rose offers a wide range of luxury home goods, including pillows, furniture, rugs, lighting, and more. <\/p><p>From classic designs to modern styles, there is something for everyone's taste. The quality of the products offered is unmatched, with every item carefully selected to ensure durability, functionality, and style. <\/p><p>Whether you are looking to add a pop of color to your living room with a vibrant rug, or to create a cozy atmosphere with new lighting, Shoppe Maison Rose has you covered. With a focus on customer satisfaction, we offer easy and hassle-free returns and exchanges, making shopping for luxury home goods online a breeze.<\/p>",
+              "text": "<p>Introducing a boutique home goods online shop that is sure to elevate the look of any living space. Shoppe Maison Rose offers a wide range of luxury home goods, including pillows, furniture, rugs, lighting, and more. </p><p>From classic designs to modern styles, there is something for everyone's taste. The quality of the products offered is unmatched, with every item carefully selected to ensure durability, functionality, and style. </p><p>Whether you are looking to add a pop of color to your living room with a vibrant rug, or to create a cozy atmosphere with new lighting, Shoppe Maison Rose has you covered. With a focus on customer satisfaction, we offer easy and hassle-free returns and exchanges, making shopping for luxury home goods online a breeze.</p>",
               "button_label": "",
               "button_link": ""
             }
@@ -3118,8 +3127,7 @@
           "1110505c-0672-402a-9a63-2c54ae7f26b7",
           "8c8ee93b-f936-4854-b6a6-93173b063d69"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "blog-template": {
         "type": "blog-template",
@@ -3141,49 +3149,49 @@
           "1614236270bc2d854e-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/New_Project_36ddd5a2-6c39-44ed-a8f6-2bd1a3ded361.png"
+              "image": "shopify://shop_images/New_Project_36ddd5a2-6c39-44ed-a8f6-2bd1a3ded361.png"
             }
           },
           "1614236270bc2d854e-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/New_Project_3_600x_1_600x_1.png"
+              "image": "shopify://shop_images/New_Project_3_600x_1_600x_1.png"
             }
           },
           "1614236270bc2d854e-2": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/New_Project_2_c10864bf-4a70-4687-975a-228f5cdcdcce.png"
+              "image": "shopify://shop_images/New_Project_2_c10864bf-4a70-4687-975a-228f5cdcdcce.png"
             }
           },
           "1614236270bc2d854e-3": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/New_Project_3_d575b30d-bc0e-4757-9c39-890242029faa.png"
+              "image": "shopify://shop_images/New_Project_3_d575b30d-bc0e-4757-9c39-890242029faa.png"
             }
           },
           "2cbe7988-9896-4000-8edc-8b937da5f17c": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/New_Project_7.png"
+              "image": "shopify://shop_images/New_Project_7.png"
             }
           },
           "52e4c78f-c827-4ffc-b19a-819711ebd47b": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/New_Project_aa06b6af-fb02-4e14-8228-4840c171c11a.png"
+              "image": "shopify://shop_images/New_Project_aa06b6af-fb02-4e14-8228-4840c171c11a.png"
             }
           },
           "6c781d06-2c86-4e68-8b65-76edea09ad75": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Storage_Basket.jpg"
+              "image": "shopify://shop_images/Storage_Basket.jpg"
             }
           },
           "d0bfd2b0-8652-4dd3-876b-0b77b498e026": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/pendent-lighting-design-maison.jpg"
+              "image": "shopify://shop_images/pendent-lighting-design-maison.jpg"
             }
           }
         },
@@ -3209,13 +3217,11 @@
         "blocks": {
           "filter_by_collection_q8BBDV": {
             "type": "filter_by_collection",
-            "settings": {
-            }
+            "settings": {}
           },
           "filter_by_type_3FcNTg": {
             "type": "filter_by_type",
-            "settings": {
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -3243,11 +3249,11 @@
           ".one-whole {padding: 3% 0;}"
         ],
         "settings": {
-          "image": "shopify:\/\/shop_images\/Shoppe_Logo_Stacked.png",
+          "image": "shopify://shop_images/Shoppe_Logo_Stacked.png",
           "title": "",
-          "content": "<p>Enduring.  Timeless. Intentionally Curated. <\/p>",
+          "content": "<p>Enduring.  Timeless. Intentionally Curated. </p>",
           "button_label": "Our Products",
-          "button_link": "shopify:\/\/collections\/all",
+          "button_link": "shopify://collections/all",
           "text_size": "regular_text",
           "text_alignment": "center"
         }
@@ -3325,6 +3331,23 @@
           "pagination_limit": 48,
           "toggle": false
         }
+      },
+      "footer-two": {
+        "type": "footer-two",
+        "settings": {
+          "section_bg_color": "#f2eeeb",
+          "footer_logo": "shopify://shop_images/footer-logo.webp",
+          "about_title": "",
+          "first_column_description": "",
+          "menu_one_title": "Shop",
+          "menu_one": "",
+          "menu_two_title": "Company",
+          "menu_two": "",
+          "last_column_title": "Follow Us",
+          "copyright_text": "All Rights Reserved.",
+          "title_font": "garamond_n7",
+          "text_font": "garamond_n4"
+        }
       }
     },
     "content_for_index": [
@@ -3340,10 +3363,9 @@
     ],
     "blocks": {
       "1232542678405107163": {
-        "type": "shopify:\/\/apps\/instafeed\/blocks\/head-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+        "type": "shopify://apps/instafeed/blocks/head-block/c447db20-095d-4a10-9725-b5977662c9d5",
         "disabled": true,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   }

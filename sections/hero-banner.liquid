@@ -39,9 +39,9 @@
 
 <div class="hero-banner relative is-flex is-align-center text-align-left">
     {% if section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1920, crop: 'center' | image_tag: width: 1920, class: "width-100" }}
+      {{ section.settings.image | image_url: width: 1920, crop: 'center' | image_tag: width: 1920, class: "width-100 lazyload", preload: true, alt: section.settings.subtitle }}
     {% else %}
-      <img src="{{ 'smr-hero-banner.jpg' | asset_url }}" class="width-100" width="1920" />
+      <img src="{{ 'smr-hero-banner.webp' | asset_url }}" class="width-100" width="1920" loading="lazy" alt="{{ section.settings.subtitle }}" />
     {% endif %}
     <div class="hero-banner-content">
       <div class="hero-banner-description is-flex is-flex-wrap">

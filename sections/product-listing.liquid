@@ -14,15 +14,15 @@
             </div>
             <div class="category-box-container is-flex is-flex-wrap is-align-center is-justify-center">
                 {% for product in section.settings.products %}
-                    <div class="category-box width-25 width-md-33 width-xs-50 width-xxxs-100 {% if product.featured_image == blank %}without-image {% endif %}">
+                    <div class="category-box width-25 width-md-33 width-xs-50 width-xxs-100 {% if product.featured_image == blank %}without-image {% endif %}">
                         <figure class="product-category-card relative">
                             {% if product.featured_image != blank %}
-                                {{ product.featured_image | image_url: width: 400, height: 400, crop: "center" | image_tag: width: 400, height: 400, class: "width-100" }}
+                                {{ product.featured_image | image_url: width: 400, height: 400, crop: "center" | image_tag: width: 400, height: 400, class: "object-fit-cover lazyload", loading: 'lazy' }}
                             {% else %}
                                 <img src="https://placehold.it/400x400" width="400" height="400" />
                             {% endif %}
                             <figcaption class="text-align-center">
-                                <div class="visible-part padding-x-10 padding-top-5 padding-bottom-10">
+                                <div class="visible-part padding-x-10 padding-top-20 padding-bottom-10">
                                     <h4><a href="{{ product.url }}">{{ product.title }}</a></h4>
                                     <p class="margin-bottom-0 product-ratings">
                                         {% liquid

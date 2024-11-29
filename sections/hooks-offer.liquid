@@ -10,16 +10,28 @@
                 <div class="hooks-offer-box margin-top-20 margin-bottom-20 width-33 width-md-50 width-sm-50 width-xs-100 overflow-hidden">
                     <div class="hooks-offer-box-content relative is-flex is-align-center is-justify-center is-flex-wrap" style="background-color: {{ block.settings.background }}">
                         {% if block.settings.image != blank %}
-                            {{ block.settings.image | image_url: width: 700, height: 700, crop: "center" | image_tag: width: 700, height: 700, class: 'image-responsive' }}
+                            {% assign alt_tag = block.settings.title | append: ' - ' | append: block.settings.subtitle %}
+                            {% if forloop.index == 1 %}
+                                {% liquid
+                                  assign preload_var = true
+                                  assign loading_var = "eager"
+                                %}
+                            {% else %}
+                                {% liquid
+                                  assign preload_var = false
+                                  assign loading_var = "lazy"
+                                %}
+                            {% endif %}
+                            {{ block.settings.image | image_url: width: 570, height: 570, crop: "center" | image_tag: width: 570, height: 570, class: 'object-fit-cover lazyload', preload: preload_var, loading: loading_var, alt: alt_tag }}
                         {% else %}
                             {% liquid
-                              assign placeholder_image = 'rugs-for-every-room.png' | asset_url
+                              assign placeholder_image = 'rugs-for-every-room.webp' | asset_url
                               if forloop.index == 3
                                 assign placeholder_image = 'statement-lighting.png' | asset_url
                               endif
 
                             %}
-                            {% if forloop.index != 2 %}<img src="{{ placeholder_image }}" height="700" width="700" class="width-100">{% endif %}
+                            {% if forloop.index != 2 %}<img src="{{ placeholder_image }}" height="570" width="570" class="object-fit-cover" loading="eager" alt="{{ block.settings.title }} - {{ block.settings.subtitle }}">{% endif %}
                         {% endif %}
                         <div class="hook-offer-description">
                             <div class="hook-offer-content is-flex is-flex-wrap {% if block.settings.offer_type == 'without_button' %}without-button text-align-center{% else %} with-button {% endif %} ">

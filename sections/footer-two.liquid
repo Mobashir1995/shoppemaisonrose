@@ -7,9 +7,9 @@
             <div class="footer_content footer-text ">
                 <div class="footer-description line-height-20 font-size-14">
                     {% if section.settings.footer_logo != blank %}
-                        {{ section.settings.footer_logo | image_url: crop: 'center' | image_tag: class: "footer-logo" }}
+                        {{ section.settings.footer_logo | image_url: crop: 'center', width: 180 | image_tag: class: "footer-logo lazyload", loading: 'lazy' }}
                     {% else %}
-                        <img src="{{ 'footer-logo.png' | asset_url }}" alt="{{ shop.title }}" class="footer-logo" />
+                        <img src="{{ 'footer-logo.png' | asset_url }}" alt="{{ shop.title }}" class="footer-logo" loading='lazy' />
                     {% endif %}
                 </div>
             </div>              
