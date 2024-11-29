@@ -3,7 +3,7 @@
 
         <hr />
 
-        <div class="width-15 width-sm-35 width-xxs-100 is-flex is-justify-start is-align-start padding-left-0 padding-right-0 is-xxs-block footer-description-section">
+        <div class="width-15 width-sm-25 width-xs-50 width-xxs-100 is-flex is-justify-start is-align-start padding-left-0 padding-right-0 is-xxs-block footer-description-section">
             <div class="footer_content footer-text ">
                 <div class="footer-description line-height-20 font-size-14">
                     {% if section.settings.footer_logo != blank %}
@@ -15,16 +15,7 @@
             </div>              
         </div>
 
-        <div class="width-34 width-md-30 width-sm-65 width-xxs-100 is-sm-flex is-sm-justify-end padding-x-20 is-xxs-block">
-            <div class="footer_content footer-text ">
-                <h6 class="footer-title">{{ section.settings.about_title }}</h6>
-                <div class="footer-description line-height-20 font-size-14">
-                    {{ section.settings.first_column_description }}
-                </div>
-            </div> 
-        </div>
-
-        <div class="width-15 width-md-17-half width-sm-33 width-xxs-100 is-sm-flex is-sm-justify-start padding-x-20 is-xxs-block footer-first-menu">
+        <div class="width-25 width-sm-25 width-xs-50 width-xxs-100 is-flex is-justify-end is-sm-justify-center is-xs-justify-end padding-x-20 is-xxs-block footer-first-menu">
             <div class="footer_menu">
                 {% liquid
                   if section.settings.menu_one != blank
@@ -49,7 +40,7 @@
             </div>
         </div>
 
-        <div class="width-15 width-md-17-half width-sm-33 width-xxs-100 is-sm-flex is-sm-justify-center padding-x-20 is-xxs-block footer-second-menu">
+        <div class="width-25 width-sm-25 width-xs-50 width-xxs-100 is-flex is-justify-end is-xs-justify-start padding-x-20 is-xxs-block footer-second-menu">
             <div class="footer_menu">
                 <h6 class="footer-title">{{ section.settings.menu_two_title }}</h6>
                 <ul class="none margin-bottom-0 line-height-20 font-size-14">
@@ -60,10 +51,10 @@
             </div>
         </div>
 
-        <div class="footer-contact-wrapper width-21 width-sm-33 width-xxs-100 is-sm-flex is-sm-justify-end is-flex-wrap is-xxs-block padding-left-20 padding-right-0">
-            <div class="footer_content footer-text width-100 is-sm-flex is-sm-justify-end is-flex-wrap is-xxs-block">
-                <h6 class="footer-title">{{ section.settings.last_column_title }}</h6>
-                <div class="footer-contact line-height-20 font-size-14">
+        <div class="footer-contact-wrapper width-35 width-sm-25 width-xs-50 width-xxs-100 is-sm-flex is-sm-justify-end is-flex-wrap is-xxs-block padding-left-20 padding-right-0">
+            <div class="footer_content footer-text is-flex is-justify-end is-flex-wrap is-xxs-block">
+                <h6 class="footer-title width-100 text-align-right">{{ section.settings.last_column_title }}</h6>
+                <div class="footer-contact text-align-right line-height-20 font-size-14">
                     {% if settings.contact_phone != blank %}
                         <p>
                             <span><i class="fa-solid fa-phone"></i></span>
@@ -78,8 +69,8 @@
                     {% endif %}
                 </div>
             </div>              
-            <div class="footer-social-icons width-100 is-sm-flex is-sm-justify-start is-flex-wrap is-xxs-block">
-                <ul class="social_icons none margin-bottom-0 is-flex">
+            <div class="footer-social-icons width-100 is-sm-flex is-sm-justify-end is-flex-wrap is-xxs-block">
+                <ul class="social_icons none margin-bottom-0 is-flex is-justify-end is-xxs-justify-start">
                     {% if settings.facebook_link != blank %}
                         <li>
                             <a href="{{ settings.facebook_link }}" rel="me" target="_blank" class="icon-facebook margin-left-0"></a>

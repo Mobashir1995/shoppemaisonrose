@@ -20,15 +20,17 @@
                     {%- case block.type -%}
                         {%- when "features" -%}
                             {% assign feature = block.settings %}
-                            <div class="key-feature width-33 width-sm-50 width-xs-100 padding-x-10 margin-top-20">
-                                <div class="key-feature-box padding-20 is-flex is-justify-center is-flex-wrap">
-                                    <div class="key-feature-icon width-100 is-flex is-justify-center is-align-center margin-bottom-10">
+                            <div class="key-feature width-25 width-md-33 width-sm-50 width-xs-100 padding-x-5 margin-top-20">
+                                <div class="key-feature-box padding-10 is-flex is-justify-center height-100">
+                                    <div class="key-feature-icon is-flex is-justify-left is-align-center margin-bottom-10">
                                         <span class="is-flex is-justify-center is-align-center">
                                             <i class="{{  feature.icon }}"></i>
                                         </span>
                                     </div>
-                                    <h4 class="key-feature-title width-100 text-align-center">{{  feature.title | escape }}</h4>
-                                    <div class="key-feature-description width-100 text-align-center margin-top-5">{{  feature.content }}</div>
+                                    <div class="key-feature-content is-flex is-flex-wrap">
+                                        <h4 class="key-feature-title width-100 text-align-left is-flex is-align-end">{{  feature.title | escape }}</h4>
+                                        <div class="key-feature-description width-100 text-align-left margin-top-5">{{  feature.content }}</div>
+                                    </div>
                                 </div>
                             </div>
                     {%- endcase -%}
@@ -169,13 +171,13 @@
             "type": "font_picker",
             "id": "title_font",
             "label": "Title Font",
-            "default": "rubik_n7"
+            "default": "garamond_n7"
         },
         {
             "type": "font_picker",
             "id": "text_font",
             "label": "Text Font",
-            "default": "rubik_n4"
+            "default": "garamond_n4"
         },
         {
             "type": "color",

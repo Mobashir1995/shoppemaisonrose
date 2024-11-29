@@ -33,14 +33,14 @@
   {% else %}
     <section class="section">
       <div class="container">
-        <div class="one-whole column">
+        <div class="one-whole column hidden">
           <div class="title">
             <a href="{{ blog.url }}" title="{{ blog.title | escape }}">{{ blog.title }}</a>
           </div>
         </div>
   {% endif %}
 
-  <div class="article-template-wrapper is-flex is-flex-wrap">
+  <div class="article-template-wrapper is-flex is-flex-wrap vs ">
     <div class="has-sidebar-option sidebar-enabled--{{ sidebar }}">
       <div class="container">
         {% if section.settings.blog_breadcrumb %}
@@ -141,41 +141,58 @@
 
         <div class="one-whole column">
           {{ article.content }}
-
           <br />
-
-          {% if section.settings.blog_author or section.settings.display_social_buttons %}
-            <hr />
-          {% endif %}
         </div>
 
+        {% if section.settings.blog_owner %}
+          <div class="one-whole column">
+            <hr />
+            <div class="is-flex">
+              <div class="blog-owner-gravatar">
+                {% if section.settings.blog_owner_image != blank %}
+                  {{ section.settings.blog_owner_image | image_url: width: 150, height: 150, crop: "center" | image_tag: width: 150, height: 150, class: "width-100" }}
+                {% else %}
+                  <img src="{{ 'rose-gravatar.jpg' | asset_url }}"  alt="Rose" />
+                {% endif %}
+              </div>
+              <div class="blog-owner-info">
+                <h3>{{ section.settings.blog_owner_name }}</h3>
+                {{ section.settings.blog_owner_info }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
         {% if section.settings.blog_author or section.settings.display_social_buttons %}
-          <div class="one-whole column is-flex is-flex-wrap">
-            {% if section.settings.blog_author %}
-              <div class="blog__author is-flex is-align-center">
-                <div class="blog__author-image is-hidden-mobile-only" data-email="{{ article.user.email }}">
-                  <img src="//1.gravatar.com/avatar/{{ article.user.email | md5 }}?s=160&r=G" alt="{{ article.author }}" />
+          <div class="one-whole column">
+            <hr />
+            <div class="is-flex is-flex-wrap">
+              {% if section.settings.blog_author %}
+                <div class="blog__author is-flex is-align-center">
+                  <div class="blog__author-image is-hidden-mobile-only" data-email="{{ article.user.email }}">
+                    <img src="//1.gravatar.com/avatar/{{ article.user.email | md5 }}?s=160&r=G" alt="{{ article.author }}" />
+                  </div>
+
+                  <div class="blog__author-bio">
+                    <h6 class="blog__author-name">{{ article.author }}</h6>
+
+                    <p class="meta">
+                      <span class="label">{{ 'blogs.article.author' | t }}</span>
+                    </p>
+
+                    {% if article.user.bio != blank %}
+                      <p>{{ article.user.bio }}</p>
+                    {% endif %}
+                  </div>
                 </div>
+              {% endif %}
 
-                <div class="blog__author-bio">
-                  <h6 class="blog__author-name">{{ article.author }}</h6>
-
-                  <p class="meta">
-                    <span class="label">{{ 'blogs.article.author' | t }}</span>
-                  </p>
-
-                  {% if article.user.bio != blank %}
-                    <p>{{ article.user.bio }}</p>
-                  {% endif %}
+              {% if section.settings.display_social_buttons %}
+                <div class="blog__social-share">
+                  {% render 'social-buttons', context: 'article' %}
                 </div>
-              </div>
-            {% endif %}
-
-            {% if section.settings.display_social_buttons %}
-              <div class="blog__social-share">
-                {% render 'social-buttons', context: 'article' %}
-              </div>
-            {% endif %}
+              {% endif %}
+            </div>
           </div>
         {% endif %}
 
@@ -450,6 +467,29 @@
         "id": "blog_tags",
         "label": "Show tags",
         "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_owner",
+        "label": "Show Owner",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "blog_owner_image",
+        "label": "Owner Image",
+      },
+      {
+        "type": "text",
+        "id": "blog_owner_name",
+        "label": "Owner Name",
+        "default": "Rose"
+      },
+      {
+        "type": "richtext",
+        "id": "blog_owner_info",
+        "label": "Owner Info",
+        "default": "<p>As principal at Maison Rose Interiors, Rose instills a bit of natural Canadian warmth where she was born and raised, and coastal California where she now lives.  Rose’s culturally diverse background and travels abroad are seen in all her objects and ever evolving style.  No matter what the style she is asked to create, each space designed by Rose is refined, collected, and unique.</p>"
       },
       {
         "type": "checkbox",

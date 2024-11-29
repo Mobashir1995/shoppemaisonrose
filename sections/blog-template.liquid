@@ -14,7 +14,7 @@
   <section class="section">
     <div class="container">
       <div class="one-whole column">
-        <h1>
+        <h1 class="hidden">
           {% if current_tags %}
             <a href="/blogs/{{ blog.handle }}/tagged/{{ current_tags | handleize }}" title="{{ blog.title | escape }}">{{ current_tags }}</a>
           {% else %}
@@ -77,7 +77,7 @@
       }
     </script>
 
-    <div class="blog-template-wrapper is-flex is-flex-wrap">
+    <div class="blog-template-wrapper is-flex is-flex-wrap padding-top-30">
       <div class="has-sidebar-option sidebar-enabled--{{ sidebar }}">
         <div class="container">
           {% for article in blog.articles %}

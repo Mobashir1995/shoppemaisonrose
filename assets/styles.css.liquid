@@ -12160,6 +12160,9 @@ div.announcementBar__message a, div.announcementBar__message p {
 .box-sizing-border-box * {
   box-sizing: border-box;
 }
+.height-100 {
+  height: 100%;
+}
 .width-100 {
   width: 100%;
 }
@@ -12235,6 +12238,9 @@ div.announcementBar__message a, div.announcementBar__message p {
 .padding-top-20 {
   padding-top: 20px;
 }
+.padding-top-30 {
+  padding-top: 30px;
+}
 .padding-bottom-5 {
   padding-bottom: 5px;
 }
@@ -12258,6 +12264,10 @@ div.announcementBar__message a, div.announcementBar__message p {
 }
 .padding-20 {
   padding: 20px;
+}
+.padding-x-5 {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .padding-x-10 {
   padding-left: 10px;
@@ -12579,12 +12589,12 @@ a.hero-banner-button {
     font-size: 14px;
 }
 .customer-reviewer-name {
-    font-family: "Rubik", sans-serif;
+    font-family: "garamond", sans-serif;
     font-size: 16px;
 }
 .customer-reviewer-designation,
 .customer-reviewer-organization {
-    font-family: "Rubik", sans-serif;
+    font-family: "garamond", sans-serif;
     font-size: 14px;
     line-height: 21px;
 }
@@ -12596,14 +12606,15 @@ a.hero-banner-button {
   overflow: hidden;
   background: #fff;
   transition: all 500ms;
+  min-height: 180px;
 }
 .key-feature-icon span {
-  width: 100px;
-  height: 100px;
+  width: 55px;
+  height: 55px;
   color: #fff;
   border-radius: 100%;
-  font-size: 45px;
-  border: 3px solid #444;
+  font-size: 22px;
+  border: 1px solid #444;
   padding: 10px !important;
   position: relative;
   transition: all 500ms;
@@ -12611,10 +12622,10 @@ a.hero-banner-button {
 .key-feature-icon span:after{
   position: absolute;
   content: '';
-  left: 5px;
-  right: 5px;
-  top: 5px;
-  bottom: 5px;
+  left: 3px;
+  right: 3px;
+  top: 3px;
+  bottom: 3px;
   z-index: 99;
   background: #444;
   border-radius: 100%;
@@ -12623,12 +12634,17 @@ a.hero-banner-button {
 .key-feature-icon span i {
   z-index: 999999;
 }
+.key-feature-content {
+  padding-left: 10px;
+}
 .key-feature-title {
   text-transform: inherit !important;
+  line-height: 18px;
+  font-size: 16px;
 }
 .key-feature-description {
-  line-height: 24px;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 15px;
 }
 .key-feature-description p {
   margin-bottom: 10px;
@@ -12693,6 +12709,30 @@ a.hero-banner-button {
 }
 .comparison-table-container table td {
   font-size: 16px;
+}
+
+/* Blog Owner
+================================================== */
+.blog-owner-gravatar{
+  width: 125px;
+  border-radius: 100%;
+  height: 125px;
+  overflow: hidden;
+}
+.blog-owner-gravatar img {
+  width: 100%;
+}
+.blog-owner-info h3 {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.blog-owner-info {
+  width: calc(100% - 140px);
+  justify-content: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
 }
 
 /* Footer
@@ -12779,6 +12819,9 @@ a.hero-banner-button {
   }
 }
 @media screen and (max-width: 768px) {
+  .key-feature-box {
+    min-height: 150px;
+  }
   .width-sm-100 {
     width: 100% !important;
   }
@@ -12831,6 +12874,12 @@ a.hero-banner-button {
   .width-xs-50 {
     width: 50% !important;
   }
+  .is-xs-justify-start {
+    justify-content: flex-start;
+  }
+  .is-xs-justify-end {
+    justify-content: flex-end;
+  }
   .hero-banner-content h1 {
     font-size: 25px;
     line-height: 25px;
@@ -12858,14 +12907,18 @@ a.hero-banner-button {
   .is-xxs-block {
     display: block;
   }
+  .is-xxs-justify-start {
+    justify-content: flex-start;
+  }
   .footer-description-section,
   .footer-first-menu,
   .footer-second-menu,
   .footer-contact-wrapper {
     padding: 5px 20px;
   }
-  .footer_content .footer-title {
-    text-align: left;
+  .footer_content .footer-title,
+  .footer-contact {
+    text-align: left !important;
   }
   .hero-banner img {
     min-height: 200px;
